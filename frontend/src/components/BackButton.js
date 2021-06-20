@@ -16,6 +16,10 @@ font-size: 14px;
 font-weight: 700;
 margin:0 0 20px 20px;
 align-self: flex-start;
+
+@media (min-width: 1024px) {
+  margin: 20px 130px 0;
+}
 `
 const BackButton = () => {
   const dispatch = useDispatch()

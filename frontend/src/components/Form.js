@@ -9,13 +9,13 @@ import user from '../reducers/user'
 import { USER_URL } from '../reusable/urls'
 
 const Container = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: grid;
   justify-content: center;
-  align-items: center;
+  grid-template-columns: 1fr 1fr;
   font-size: 30px;
   margin: 20px;
   color: #f1dbb3
+
 `
 
 const Button = styled.button`

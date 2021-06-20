@@ -25,6 +25,11 @@ const InnerContainer = styled.div`
   background-color: #f1dbb3;
   margin: 20px;
   padding: 20px;
+
+  @media (min-width: 1024px) {
+    margin: 50px 130px 50px 130px;
+    padding: 40px;
+  }
 `
 
 const ArtistContainer = styled.div`
@@ -49,7 +54,7 @@ const Input = styled.input`
   width: 40px;
   height: 20px;
   background-color: #f1dbb3;
-  border: 1px solid #4b3d2d;
+  border: 1px solid #4b3d2d
 `;
 
 const Span = styled.span`
@@ -142,6 +147,7 @@ const SelectedArtworks = () => {
             <label>
               {" "}
               Bokstav:
+              {" "}
               <Input 
               type="text"
               value={newAnswer}

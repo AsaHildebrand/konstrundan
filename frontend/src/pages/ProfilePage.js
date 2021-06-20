@@ -24,7 +24,13 @@ const ListContainer = styled.div`
   font-family: "Arial";
   font-style: normal;
   font-size: 16px;
+
+  @media (min-width: 1024px) {
+    width: 250px;
+    
+  }
 `
+
 const ResolvedContainer = styled.div`
   background-color: #f1dbb3;
   display: flex;
@@ -32,12 +38,24 @@ const ResolvedContainer = styled.div`
   justify-content: center;
   align-items: flex-start;
   margin: 20px;
+
+  @media (min-width: 1024px) {
+   
+  }
 `
 
 const WelcomeText = styled.p`
   color: #f1dbb3;
   font-size: 24px;
 `
+
+const Text = styled.p`
+@media (min-width: 1024px) {
+
+}
+  
+`
+
 
 
 const ProfilePage = () => {
@@ -102,7 +120,7 @@ const ProfilePage = () => {
           {resolvedKarlstad.map((item) => {
             return (
               <>
-                <p>{item.artwork.id}.{" "}{item.artwork.title}</p>
+                <Text>{item.artwork.id}.{" "}{item.artwork.title}</Text>
               </>
             )
           })}
@@ -112,7 +130,7 @@ const ProfilePage = () => {
           {resolvedUppsala.map((item) => {
             return (
               <>
-                <p>{item.artwork.id}.{" "}{item.artwork.title}</p>
+                <Text>{item.artwork.id}.{" "}{item.artwork.title}</Text>
               </>
             )
           })}

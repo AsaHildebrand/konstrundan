@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@babel/plugin-proposal-nullish-coalescing-operator": "^7.14.5",
-    "@react-google-maps/api": "^2.2.0",
     "@reduxjs/toolkit": "^1.6.0",
     "babel-eslint": "^10.1.0",
     "dotenv": "^10.0.0",
@@ -14,6 +13,7 @@
     "eslint-plugin-jsx-a11y": "^6.4.1",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-react-hooks": "^2.5.1",
+    "pigeon-maps": "^0.19.6",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-redux": "^7.2.4",
