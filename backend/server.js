@@ -9,13 +9,13 @@ import { readFile } from 'fs/promises'
 
 const artWorksKarlstad = JSON.parse(
   await readFile(
-    new URL('./data/karlstad.json', import.meta.url)
+    new URL('./data/karlstadny.json', import.meta.url)
   )
 )
 
 const artWorksUppsala = JSON.parse(
   await readFile(
-    new URL('./data/uppsala.json', import.meta.url)
+    new URL('./data/uppsalany.json', import.meta.url)
   )
 )
 
