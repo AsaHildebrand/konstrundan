@@ -42,11 +42,18 @@ const MapContainer = () => {
       fetch(MAP_URL(currentCity.city))
         .then((res) => res.json())
         .then((json) => setLocations(json));
+        
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  console.log(locations);
+  // const test = "59.3820127"
+  // const log = parseFloat(test)
+  // console.log(log)
+
+  locations.forEach(item => item.lat = parseFloat(item.lat))
+    return locations;
+    console.log(locations)
 
   const testLocations =
 
@@ -83,7 +90,8 @@ const MapContainer = () => {
         "clue": "Vilken är den första bokstaven på skyltens tredje rad?",
         "correctAnswer": "I",
         "__v": 0
-      }]
+      }
+    ]
 
   const markerColor = "brown"
 
