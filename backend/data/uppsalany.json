@@ -1,143 +1,142 @@
-
-  [
-    {
-      "id": "1",
-      "title": "Resenärerna",
-      "artist": "Klara Kristalova",
-      "year": "2021",
-      "location": "[59.8172917.627757]",
-      "clue": "Vad har figurerna med sig enligt skylten? Skriv första bokstaven i det föremålet.",
-      "correctAnswer": "r",
-      "description": "Tre figurer med en resväska möter oss i Valsätraparken. Konstnären har tagit inspiration från sin egen familj som emigrerade till Sverige från dåvarande Tjeckoslovakien 1968."
-    },
-    {
-      "id": "2",
-      "title": "Chihuahua",
-      "artist": "Hanna Beling",
-      "year": "2007",
-      "location": "[59.84038417.621362]",
-      "clue": "På samma stolpe som skulpturens skylt sitter en informationsskylt om en buske. Med vilken bokstav börjar buskens namn?",
-      "correctAnswer": "h",
-      "description": "På promenad i Stadsskogen möts man plötsligt av en liten metallglänsande hund. Konstnären Hanna Beling har många offentliga verk runtom i Sverige. "
-    },
-    {
-      "id": "3",
-      "title": "Till hästen ",
-      "artist": "Lars Huck Hultgren",
-      "year": "1986",
-      "location": "[59.8445417.63988]",
-      "clue": "Med vilken bokstav börjar firman som har tillverkat skulpturen?",
-      "correctAnswer": "l",
-      "description": "\"Till hästen\" är i metall, men annars har trä varit ett vanligt förekommande material för Lars \"Huck\" Hultgren som levde 1931-2018. Han hämtade inspiration från allmogekonst och naivkonst. "
-    },
-    {
-      "id": "4",
-      "title": "Winners",
-      "artist": "Veronica Brovall",
-      "year": "2014",
-      "location": "[59.848143117.6351129]",
-      "clue": "Vilken bokstav står på baksidan av den gröna handen som gör tummen upp?",
-      "correctAnswer": "w",
-      "description": "Denna humoristiska skulpturgrupp står utanför Nordens första center för protonstrålning för cancerbehandling. De seriefigursaktiga kroppsdelarna ska locka till lek. Prova stoppa in din arm i en av de skulpterade armarna!"
-    },
-    {
-      "id": "5",
-      "title": "Clios barn",
-      "artist": "Istvan Varga",
-      "year": "1993",
-      "location": "[59.84907517.6339344]",
-      "clue": "En biskop nämns i texten på skylten. Vilken bokstav börjar hans förnamn med?",
-      "correctAnswer": "j",
-      "description": "Det finns mycket symbolik inhuggen i den gotländska kalkstenen i denna skulptur. Verket gestaltar olika delar av verksamheten vid Uppsala arkivcentrum, som den står placerad vid. "
-    },
-    {
-      "id": "6",
-      "title": "Minnesmärke över Fadime Sahindal (1975-2002)",
-      "artist": "Hanna Beling",
-      "year": "2013",
-      "location": "[59.856475517.6403331]",
-      "clue": "Vilken är första bokstaven i texten på skylten som står efter årtalet skulpturen kom till?",
-      "correctAnswer": "r",
-      "description": "Fadime Sahindal blev en offentlig person när hon engagerade sig mot hedersrelaterat våld och föreläste runtom i Sverige. Hon hade själv trotsat sin familj och 2002 sköts hon ihjäl av sin egen far."
-    },
-    {
-      "id": "7",
-      "title": "Child carrying wings",
-      "artist": "Knutte Wester",
-      "year": "2015",
-      "location": "[59.855117.62848]",
-      "clue": "Vad kallar konstnären barnet i texten på skylten?",
-      "correctAnswer": "a",
-      "description": "Skärskådar man skulpturen så kan man ana att den bygger på en avgjutning av en riktig pojke. Den anonyme pojken var en gömd flykting och vingarna han bär på kan ses som en symbol för hans inre resa, till en plats där han får stanna."
-    },
-    {
-      "id": "8",
-      "title": "Väggmålning, Berlin",
-      "artist": "Erik Krikortz",
-      "year": "2015",
-      "location": "[59.8561217.63306]",
-      "clue": "Med vilket bokstav börjar det östtyska verk som inspirerat till detta verk?",
-      "correctAnswer": "a",
-      "description": "Utsmyckningen på elskåpet har givit upphov till mycken debatt, inte minst från lokala politiker. Förlagan är en östtysk muralmålning i Berllin. Somliga uppfattar verket som en hyllning till DDR och har krävt att det tas bort. "
-    },
-    {
-      "id": "9",
-      "title": "ODjuret",
-      "artist": "Katarina Sundkvist Zohari",
-      "year": "2008",
-      "location": "[59.8606817.63232]",
-      "clue": "På skylten står det om en person som spelar och sjunger. Vilken bokstav börjar hans namn med?",
-      "correctAnswer": "o",
-      "description": "ODjuret är en ordlek som anspelar på Uppsalas kända manskör Orphei Drängar, förkortat OD. Konstnären har inspirerats av den grekiska myten om Orfeus (som Orphei kommer av). Orfeus musik fick de vilda djuren att falla ner på rygg och lyssna. "
-    },
-    {
-      "id": "10",
-      "title": "Drakar, In Manus Tuas",
-      "artist": "Kajsa Mattas",
-      "year": "2003",
-      "location": "[59.8579917.63841]",
-      "clue": "Med vilken bokstav börjar den första bron som nämns på skylten?",
-      "correctAnswer": "n",
-      "description": "Dessa drakar är en del i ett större verk kallat In Manus Tuas. Mellan Nybron och Islandsbron finns reliefer och fem separata skulpturer av Kajsa Mattas. Skulpturerna planerades i samband med att man förnyade miljön längs ån."
-    },
-    {
-      "id": "11",
-      "title": "Flora",
-      "artist": "Axel Wallenberg",
-      "year": "1957",
-      "location": "[59.86547817.668894]",
-      "clue": "Det står ett ord före Uppsala kommun på skylten. Skriv andra bokstaven i det ordet.",
-      "correctAnswer": "g",
-      "description": "Axel Wallenberg studerade för Carl Milles och de båda utvecklade sedan ett intensivt samarbete. Efter Carl Milles död tog Wallenberg över som intendent och konstnärlig ledare för Millesgården på Lidingö. "
-    },
-    {
-      "id": "12",
-      "title": "Lövet",
-      "artist": "Sonja Pettersson",
-      "year": "1990",
-      "location": "[59.86430717.673672]",
-      "clue": "Det finns ett djur på skylten. Vilken bokstav börjar den djurarten på?",
-      "correctAnswer": "l",
-      "description": "Sonja Pettersson var en svensk skulptör som gjorde sig känd för skulpturer av djur, framför allt hundar. Här finns dock en katt men på en annan plats i parken kan du hitta hennes verk Bollhund."
-    },
-    {
-      "id": "13",
-      "title": "Solbågen",
-      "artist": "Leif Bolter",
-      "year": "1991",
-      "location": "[59.86658917.690837]",
-      "clue": "Skriv första bokstaven i namnet på fonden som bidrog med medel till verket.",
-      "correctAnswer": "t",
-      "description": "Förutom att vara konstnär sitter Leif i Konstakademien för de fria konsterna och Stockholms skönhetsråd. Hans offentliga verk befinner sig på gränsen mellan skulptur och arkitektur. "
-    },
-    {
-      "id": "14",
-      "title": "Bear out by events",
-      "artist": "Emma Kronvall",
-      "year": "2011",
-      "location": "[59.87634617.665414]",
-      "clue": "Efter Uppsala kommun står ett annat ord på skylten. Skriv andra bokstaven i det ordet. ",
-      "correctAnswer": "u",
-      "description": "När det blåser kan tratten som björnhuvudet befinner sig i snurra runt så att björnen får se sig om. Konstnären uppförde två andra verk i Gränbyparken under samma år. Alla tre har ett djurtema. "
-    }
-  ]
+[
+      {
+          "id": "1",
+          "title": "Resenärerna",
+          "artist": "Klara Kristalova",
+          "year": "2021",
+          "location": "[59.81729,17.627757]",
+          "clue": "Vad har figurerna med sig enligt skylten? Skriv första bokstaven i det föremålet.",
+          "correctAnswer": "r",
+          "description": "Tre figurer med en resväska möter oss i Valsätraparken. Konstnären har tagit inspiration från sin egen familj som emigrerade till Sverige från dåvarande Tjeckoslovakien 1968."
+      },
+      {
+          "id": "2",
+          "title": "Chihuahua",
+          "artist": "Hanna Beling",
+          "year": "2007",
+          "location": "[59.840384,17.621362]",
+          "clue": "På samma stolpe som skulpturens skylt sitter en informationsskylt om en buske. Med vilken bokstav börjar buskens namn?",
+          "correctAnswer": "h",
+          "description": "På promenad i Stadsskogen möts man plötsligt av en liten metallglänsande hund. Konstnären Hanna Beling har många offentliga verk runtom i Sverige. "
+      },
+      {
+          "id": "3",
+          "title": "Till hästen ",
+          "artist": "Lars Huck Hultgren",
+          "year": "1986",
+          "location": "[59.84454,17.63988]",
+          "clue": "Med vilken bokstav börjar firman som har tillverkat skulpturen?",
+          "correctAnswer": "l",
+          "description": "\"Till hästen\" är i metall, men annars har trä varit ett vanligt förekommande material för Lars \"Huck\" Hultgren som levde 1931-2018. Han hämtade inspiration från allmogekonst och naivkonst. "
+      },
+      {
+          "id": "4",
+          "title": "Winners",
+          "artist": "Veronica Brovall",
+          "year": "2014",
+          "location": "[59.8481431,17.6351129]",
+          "clue": "Vilken bokstav står på baksidan av den gröna handen som gör tummen upp?",
+          "correctAnswer": "w",
+          "description": "Denna humoristiska skulpturgrupp står utanför Nordens första center för protonstrålning för cancerbehandling. De seriefigursaktiga kroppsdelarna ska locka till lek. Prova stoppa in din arm i en av de skulpterade armarna!"
+      },
+      {
+          "id": "5",
+          "title": "Clios barn",
+          "artist": "Istvan Varga",
+          "year": "1993",
+          "location": "[59.849075,17.6339344]",
+          "clue": "En biskop nämns i texten på skylten. Vilken bokstav börjar hans förnamn med?",
+          "correctAnswer": "j",
+          "description": "Det finns mycket symbolik inhuggen i den gotländska kalkstenen i denna skulptur. Verket gestaltar olika delar av verksamheten vid Uppsala arkivcentrum, som den står placerad vid. "
+      },
+      {
+          "id": "6",
+          "title": "Minnesmärke över Fadime Sahindal (1975-2002)",
+          "artist": "Hanna Beling",
+          "year": "2013",
+          "location": "[59.8564755,17.6403331]",
+          "clue": "Vilken är första bokstaven i texten på skylten som står efter årtalet skulpturen kom till?",
+          "correctAnswer": "r",
+          "description": "Fadime Sahindal blev en offentlig person när hon engagerade sig mot hedersrelaterat våld och föreläste runtom i Sverige. Hon hade själv trotsat sin familj och 2002 sköts hon ihjäl av sin egen far."
+      },
+      {
+          "id": "7",
+          "title": "Child carrying wings",
+          "artist": "Knutte Wester",
+          "year": "2015",
+          "location": "[59.8551,17.62848]",
+          "clue": "Vad kallar konstnären barnet i texten på skylten?",
+          "correctAnswer": "a",
+          "description": "Skärskådar man skulpturen så kan man ana att den bygger på en avgjutning av en riktig pojke. Den anonyme pojken var en gömd flykting och vingarna han bär på kan ses som en symbol för hans inre resa, till en plats där han får stanna."
+      },
+      {
+          "id": "8",
+          "title": "Väggmålning, Berlin",
+          "artist": "Erik Krikortz",
+          "year": "2015",
+          "location": "[59.85612,17.63306]",
+          "clue": "Med vilket bokstav börjar det östtyska verk som inspirerat till detta verk?",
+          "correctAnswer": "a",
+          "description": "Utsmyckningen på elskåpet har givit upphov till mycken debatt, inte minst från lokala politiker. Förlagan är en östtysk muralmålning i Berllin. Somliga uppfattar verket som en hyllning till DDR och har krävt att det tas bort. "
+      },
+      {
+          "id": "9",
+          "title": "ODjuret",
+          "artist": "Katarina Sundkvist Zohari",
+          "year": "2008",
+          "location": "[59.86068,17.63232]",
+          "clue": "På skylten står det om en person som spelar och sjunger. Vilken bokstav börjar hans namn med?",
+          "correctAnswer": "o",
+          "description": "ODjuret är en ordlek som anspelar på Uppsalas kända manskör Orphei Drängar, förkortat OD. Konstnären har inspirerats av den grekiska myten om Orfeus (som Orphei kommer av). Orfeus musik fick de vilda djuren att falla ner på rygg och lyssna. "
+      },
+      {
+          "id": "10",
+          "title": "Drakar, In Manus Tuas",
+          "artist": "Kajsa Mattas",
+          "year": "2003",
+          "location": "[59.85799,17.63841]",
+          "clue": "Med vilken bokstav börjar den första bron som nämns på skylten?",
+          "correctAnswer": "n",
+          "description": "Dessa drakar är en del i ett större verk kallat In Manus Tuas. Mellan Nybron och Islandsbron finns reliefer och fem separata skulpturer av Kajsa Mattas. Skulpturerna planerades i samband med att man förnyade miljön längs ån."
+      },
+      {
+          "id": "11",
+          "title": "Flora",
+          "artist": "Axel Wallenberg",
+          "year": "1957",
+          "location": "[59.865478,17.668894]",
+          "clue": "Det står ett ord före Uppsala kommun på skylten. Skriv andra bokstaven i det ordet.",
+          "correctAnswer": "g",
+          "description": "Axel Wallenberg studerade för Carl Milles och de båda utvecklade sedan ett intensivt samarbete. Efter Carl Milles död tog Wallenberg över som intendent och konstnärlig ledare för Millesgården på Lidingö. "
+      },
+      {
+          "id": "12",
+          "title": "Lövet",
+          "artist": "Sonja Pettersson",
+          "year": "1990",
+          "location": "[59.864307,17.673672]",
+          "clue": "Det finns ett djur på skylten. Vilken bokstav börjar den djurarten på?",
+          "correctAnswer": "l",
+          "description": "Sonja Pettersson var en svensk skulptör som gjorde sig känd för skulpturer av djur, framför allt hundar. Här finns dock en katt men på en annan plats i parken kan du hitta hennes verk Bollhund."
+      },
+      {
+          "id": "13",
+          "title": "Solbågen",
+          "artist": "Leif Bolter",
+          "year": "1991",
+          "location": "[59.866589,17.690837]",
+          "clue": "Skriv första bokstaven i namnet på fonden som bidrog med medel till verket.",
+          "correctAnswer": "t",
+          "description": "Förutom att vara konstnär sitter Leif i Konstakademien för de fria konsterna och Stockholms skönhetsråd. Hans offentliga verk befinner sig på gränsen mellan skulptur och arkitektur. "
+      },
+      {
+          "id": "14",
+          "title": "Bear out by events",
+          "artist": "Emma Kronvall",
+          "year": "2011",
+          "location": "[59.876346,17.665414]",
+          "clue": "Efter Uppsala kommun står ett annat ord på skylten. Skriv andra bokstaven i det ordet. ",
+          "correctAnswer": "u",
+          "description": "När det blåser kan tratten som björnhuvudet befinner sig i snurra runt så att björnen får se sig om. Konstnären uppförde två andra verk i Gränbyparken under samma år. Alla tre har ett djurtema. "
+      }
+ ]
