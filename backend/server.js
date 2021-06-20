@@ -89,8 +89,13 @@ const artWorkSchema = new mongoose.Schema({
     required: true
   },
   location: {
-    type: [],
-    required: true
+    type: {
+      type: String,
+      enum: ['Point'],
+    },
+    coordinates: {
+      type: [Number],
+    }
   },
   clue: {
     type: String,
@@ -106,6 +111,8 @@ const artWorkSchema = new mongoose.Schema({
     required: true
   }
 })
+
+artWorkSchema.index({location: '2dsphere' });
 
 
 const ArtWorkKarlstad = mongoose.model('ArtWorkKarlstad', artWorkSchema)
