@@ -9,13 +9,13 @@ import { readFile } from 'fs/promises'
 
 const artWorksKarlstad = JSON.parse(
   await readFile(
-    new URL('./data/karlstaddiv.json', import.meta.url)
+    new URL('./data/karlstadny.json', import.meta.url)
   )
 )
 
 const artWorksUppsala = JSON.parse(
   await readFile(
-    new URL('./data/uppsaladiv.json', import.meta.url)
+    new URL('./data/uppsalany.json', import.meta.url)
   )
 )
 
@@ -88,8 +88,14 @@ const artWorkSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
-  lat: {type: mongoose.Types.Decimal128},
-  lng: {type: mongoose.Types.Decimal128},
+  lat: {
+    type: String,
+    required: true
+  },
+  lng: {
+    type: String,
+    required: true
+  },
   clue: {
     type: String,
     required: true
