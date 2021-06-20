@@ -25,7 +25,6 @@ const InnerContainer = styled.div`
     height: 75%;
     width: 90%;
 `
-//Don'd add padding to this container - destroys centering and navbar position
 
 const MapContainer = () => {
   const [locations, setLocations] = useState([]);
