@@ -1,203 +1,202 @@
-
-  [
-    {
-      "id": "1",
-      "title": "Vargen",
-      "artist": "Lennart Sand",
-      "year": "1999",
-      "location": "[59.3697610, 13.4867216]",
-      "clue": "Vilken är den fjärde bokstaven i översta raden på skylten till denna skulptur?",
-      "correct answer": "G",
-      "despription": "Det är många barn som har testat att sitta på denna varg och känt på dess vassa tänder. Det råder delade meningar om vargen ser snäll ut eller om den är skräckinjagande!"
-    },
-    {
-      "id": "2",
-      "title": "Dimman",
-      "artist": "Gusten Lindberg",
-      "year": "1937",
-      "location": "[59.3766395, 13.4929866]",
-      "clue": "Vilken är den andra bokstaven i den andra raden på skylten till denna skulptur?",
-      "correct answer": "U",
-      "despription": "Denna statys förlaga i gips ställdes ut på världsutställningen i Paris 1889 och vann pris. Först år 1910 gjordes en bronsavgjutning som inledande placerades i Stockholm men skänktes till Karlstad."
-    },
-    {
-      "id": "3",
-      "title": "Flottaren",
-      "artist": "Solveig Nyqvist",
-      "year": "2001",
-      "location": "[59.3814502, 13.4872158]",
-      "clue": "Vilken är den första bokstaven på skyltens tredje rad?",
-      "correct answer": "I",
-      "despription": "Familjen Ander, som grundade och fortfarande är ägare till Nya Wermlands-Tidningen, beställde detta konstverk som står att skåda utanför NWT-huset."
-    },
-    {
-      "id": "4",
-      "title": "Ratrace",
-      "artist": "Maria Vallgren",
-      "year": "2015",
-      "location": "[59.3754438, 13.5016555]",
-      "clue": "Vilken är den sista bokstaven på andra raden?",
-      "correct answer": "N",
-      "despription": "Detta konstverk är tillverkat i sten och brons och står i Stadsträdgården."
-    },
-    {
-      "id": "5",
-      "title": "Into my eye",
-      "artist": "Håkan Blomqvist & Karin Westman",
-      "year": "2013",
-      "location": "[59.3754243, 13.5019867]",
-      "clue": "På skylten står två skapare nämnda. Vilken är den fjärde bokstaven i den första skaparens namn?",
-      "correct answer": "A",
-      "despription": "Detta konstverk står i Stadsträdgården och är gjort av järn och glas."
-    },
-    {
-      "id": "6",
-      "title": "Solur",
-      "artist": "Roland Haeberlein",
-      "year": "1976",
-      "location": "[59.3820127, 13.4923274]",
-      "clue": "Till höger under soluret står IAKTTAG, följt av ett annat ord. Vilken bokstav börjar det andra ordet på?",
-      "correct answer": "S",
-      "despription": "Detta konstverk handlar om tid och rum. Det är ett monument över tiden, men det är också ett riktigt solur!"
-    },
-    {
-      "id": "7",
-      "title": "Med ett lende",
-      "artist": "Viktor Korneev",
-      "year": "2007",
-      "location": "[59.3763910, 13.5058025]",
-      "clue": "Vilken bokstav är den sista på andra raden på skylten?",
-      "correct answer": "V",
-      "despription": "Skulpturen \"Med ett leende\" föreställer en dam som sitter och småfryser på kajen. Den är uthuggen i bohusgranit."
-    },
-    {
-      "id": "8",
-      "title": "Hertig Karl",
-      "artist": "Christian Eriksson",
-      "year": "1926",
-      "location": "[59.3807940, 13.4992163]",
-      "clue": "Under statyn står att läsa \"Han grundade staden 1854\" på latin. Vilken är den sista bokstaven i den latinska meningen?",
-      "correct answer": "T",
-      "despription": "På sidorna på statyns sockel finns två reliefer. Den ena föreställer värmländskt svedjebruk och det andra föreställer arbetet i en stångjärnssmedja."
-    },
-    {
-      "id": "9",
-      "title": "Sola i Karlstad",
-      "artist": "Herman Reijers",
-      "year": "1985",
-      "location": "[59.3811784, 13.4997129]",
-      "clue": "Vilken är den första bokstaven i namnet på värdshusflickan som denna skulptur föreställer?",
-      "correct answer": "E",
-      "despription": "Den värdshusservitris som denna skulptur föreställer ska ha varit väldigt glad och positiv och kallades därför Sola. Skulpturen uppfattas däremot av många som mer bestämd och sträng. Vad tycker du?"
-    },
-    {
-      "id": "10",
-      "title": "Selma Lagerlöf",
-      "artist": "Arvid Backlund",
-      "year": "1958",
-      "location": "[59.3821020, 13.4986457]",
-      "clue": "Vilken är den första bokstaven i den sistan raden på skylten till denna skulptur?",
-      "correct answer": "A",
-      "despription": "Statyn av Selma Lagerlöf invigdes år 1958  till hundraårsminnet av när hon föddes."
-    },
-    {
-      "id": "11",
-      "title": "Torgdammen",
-      "artist": "Ove Lindblom",
-      "year": "1989",
-      "location": "[59.3832773, 13.5026428]",
-      "clue": "Vilken är den femte bokstaven i den andra raden på skylten till denna skulptur?",
-      "correct answer": "I",
-      "despription": "Detta konstverk fanns från början på Stora torget men flyttades då torget skulle göras om år 1995. Konstverket handlar om förhållandet mellan människan och naturen."
-    },
-    {
-      "id": "12",
-      "title": "Sveno Elfdalius",
-      "artist": "Carl Eldh",
-      "year": "1929",
-      "location": "[59.3812395, 13.5064516]",
-      "clue": "Detta är en skulptur av Sveno Elfdalius. På skulpturen står ännu ett av hans namn. Vad börjar det namnet med för bokstav?",
-      "correct answer": "C",
-      "despription": "Elfdalius arbetade som rektor och kyrkoherde. Han lade grunden till det som skulle bli Karlstads första gymnasium."
-    },
-    {
-      "id": "13",
-      "title": "Bokmoln",
-      "artist": "Peder Istad",
-      "year": "2015",
-      "location": "[59.383250, 13.502169]",
-      "clue": "Vilken är den sista bokstaven på andra raden på skylten i marken bredvid detta konstverk?",
-      "correct answer": "D",
-      "despription": "Denna skulptur är gjord i Tolgagranit och står utanför Stadsbiblioteket. I molnens mellanrum kan man se en bok framträda."
-    },
-    {
-      "id": "14",
-      "title": "Handen",
-      "artist": "Eugen Krajcik",
-      "year": "1994",
-      "location": "[59.3820438, 13.5121201]",
-      "clue": "Skulpturen har ett särskilt märke till vänster på skylten. Vad är första bokstaven på märket?",
-      "correct answer": "C",
-      "despription": "Denna hand är tillverkad av nätarmerad fiberputs och kom till för att piffa upp byggnaden där det enbart var en rund betongpelare innan!"
-    },
-    {
-      "id": "15",
-      "title": "Vändande lodjur",
-      "artist": "Arvid Knöppel",
-      "year": "1952",
-      "location": "[59.3876854, 13.5076532]",
-      "clue": "I den andra raden på skulpturens skylt förekommer en bokstav två gånger. Vilken bokstav är det?",
-      "correct answer": "P",
-      "despription": "Lodjurets skapare bodde på en gård i närheten av Arvika och hade där ett reservat för nordiska vilda djur. Han är känd för sina djurskulpturer och djurteckningar."
-    },
-    {
-      "id": "16",
-      "title": "Sven Erik Magnusson",
-      "artist": "Assa Kauppi",
-      "year": "2020",
-      "location": "[59.386277, 13.498823]",
-      "clue": "Vilken bokstav är den fjärde att hitta på skulpturens skylts första rad?",
-      "correct answer": "L",
-      "despription": "Denna skulptur är en hyllning till den kända Sven-Erik Magnusson från dansbandet Sven-Ingvars. Den är gjord i brons. Bredvid honom finns även en gitarr samt en mikrofon!"
-    },
-    {
-      "id": "17",
-      "title": "Ferlin steppar",
-      "artist": "Thomas Qvarsebo",
-      "year": "2002",
-      "location": "[59.381111, 13.501831]",
-      "clue": "På bordet som tillhör denna skulptur finns en dikt. Vilken är den åttonde bokstaven i diktens tredje rad?",
-      "correct answer": "Y",
-      "despription": "Nils Ferlin föddes i Karlstad, Klara, år 1898 och där bodde han sina första tio år i livet."
-    },
-    {
-      "id": "18",
-      "title": "Fröding",
-      "artist": "Herman Reijers",
-      "year": "1996",
-      "location": "[59.380384, 13.501843]",
-      "clue": "På skylten på husfasaden en bit från denna skulptur står det vilken månad statyn restes. Vilken bokstav börjar denna månad med?",
-      "correct answer": "A",
-      "despription": "Gustaf Fröding bodde i Karlstad men trivdes inte där på grund av att överklassen var upprörda över att han var så kontroversiell vilket gjorde att han inte kände sig omtyckt."
-    },
-    {
-      "id": "19",
-      "title": "Fredsmonumentet",
-      "artist": "Ivar Johnsson",
-      "year": "1955",
-      "location": "[59.380735, 13.502403]",
-      "clue": "Längst ner på skylten till Fredsmonumentet finns en mening där alla ord börjar på samma bokstav, vilken?",
-      "correct answer": "F",
-      "despription": "Detta monuments utseende har diskuterats mycket genom åren och det har kallats bland annat \"skräcktanten\", \"skräckens monument\" samt utsetts till Sveriges fulaste staty i ett TV-program."
-    },
-    {
-      "id": "20",
-      "title": "Vindarnas boning",
-      "artist": "Aimo Tukiainen",
-      "year": "1967",
-      "location": "[59.381592, 13.497686]",
-      "clue": "På detta konstverk kan man på sidan som vetter mot älven läsa en textrad. Vilken är den sista bokstaven i denna textrad?",
-      "correct answer": "I",
-      "despription": "Denna skulptur är skapad till minne över de människor som kom från Finland till Sverige från 1500-talet och framåt. Då många kom till just Värmland så placerades denna skulptur i Karlstad."
-    }
+[
+      {
+          "id": "1",
+          "title": "Vargen",
+          "artist": "Lennart Sand",
+          "year": "1999",
+          "location": "[59.3697610, 13.4867216]",
+          "clue": "Vilken är den fjärde bokstaven i översta raden på skylten till denna skulptur?",
+          "correct answer": "G",
+          "description": "Det är många barn som har testat att sitta på denna varg och känt på dess vassa tänder. Det råder delade meningar om vargen ser snäll ut eller om den är skräckinjagande!"
+      },
+      {
+          "id": "2",
+          "title": "Dimman",
+          "artist": "Gusten Lindberg",
+          "year": "1937",
+          "location": "[59.3766395, 13.4929866]",
+          "clue": "Vilken är den andra bokstaven i den andra raden på skylten till denna skulptur?",
+          "correct answer": "U",
+          "description": "Denna statys förlaga i gips ställdes ut på världsutställningen i Paris 1889 och vann pris. Först år 1910 gjordes en bronsavgjutning som inledande placerades i Stockholm men skänktes till Karlstad."
+      },
+      {
+          "id": "3",
+          "title": "Flottaren",
+          "artist": "Solveig Nyqvist",
+          "year": "2001",
+          "location": "[59.3814502, 13.4872158]",
+          "clue": "Vilken är den första bokstaven på skyltens tredje rad?",
+          "correct answer": "I",
+          "description": "Familjen Ander, som grundade och fortfarande är ägare till Nya Wermlands-Tidningen, beställde detta konstverk som står att skåda utanför NWT-huset."
+      },
+      {
+          "id": "4",
+          "title": "Ratrace",
+          "artist": "Maria Vallgren",
+          "year": "2015",
+          "location": "[59.3754438, 13.5016555]",
+          "clue": "Vilken är den sista bokstaven på andra raden?",
+          "correct answer": "N",
+          "description": "Detta konstverk är tillverkat i sten och brons och står i Stadsträdgården."
+      },
+      {
+          "id": "5",
+          "title": "Into my eye",
+          "artist": "Håkan Blomqvist & Karin Westman",
+          "year": "2013",
+          "location": "[59.3754243, 13.5019867]",
+          "clue": "På skylten står två skapare nämnda. Vilken är den fjärde bokstaven i den första skaparens namn?",
+          "correct answer": "A",
+          "description": "Detta konstverk står i Stadsträdgården och är gjort av järn och glas."
+      },
+      {
+          "id": "6",
+          "title": "Solur",
+          "artist": "Roland Haeberlein",
+          "year": "1976",
+          "location": "[59.3820127, 13.4923274]",
+          "clue": "Till höger under soluret står IAKTTAG, följt av ett annat ord. Vilken bokstav börjar det andra ordet på?",
+          "correct answer": "S",
+          "description": "Detta konstverk handlar om tid och rum. Det är ett monument över tiden, men det är också ett riktigt solur!"
+      },
+      {
+          "id": "7",
+          "title": "Med ett lende",
+          "artist": "Viktor Korneev",
+          "year": "2007",
+          "location": "[59.3763910, 13.5058025]",
+          "clue": "Vilken bokstav är den sista på andra raden på skylten?",
+          "correct answer": "V",
+          "description": "Skulpturen \"Med ett leende\" föreställer en dam som sitter och småfryser på kajen. Den är uthuggen i bohusgranit."
+      },
+      {
+          "id": "8",
+          "title": "Hertig Karl",
+          "artist": "Christian Eriksson",
+          "year": "1926",
+          "location": "[59.3807940, 13.4992163]",
+          "clue": "Under statyn står att läsa \"Han grundade staden 1854\" på latin. Vilken är den sista bokstaven i den latinska meningen?",
+          "correct answer": "T",
+          "description": "På sidorna på statyns sockel finns två reliefer. Den ena föreställer värmländskt svedjebruk och det andra föreställer arbetet i en stångjärnssmedja."
+      },
+      {
+          "id": "9",
+          "title": "Sola i Karlstad",
+          "artist": "Herman Reijers",
+          "year": "1985",
+          "location": "[59.3811784, 13.4997129]",
+          "clue": "Vilken är den första bokstaven i namnet på värdshusflickan som denna skulptur föreställer?",
+          "correct answer": "E",
+          "description": "Den värdshusservitris som denna skulptur föreställer ska ha varit väldigt glad och positiv och kallades därför Sola. Skulpturen uppfattas däremot av många som mer bestämd och sträng. Vad tycker du?"
+      },
+      {
+          "id": "10",
+          "title": "Selma Lagerlöf",
+          "artist": "Arvid Backlund",
+          "year": "1958",
+          "location": "[59.3821020, 13.4986457]",
+          "clue": "Vilken är den första bokstaven i den sistan raden på skylten till denna skulptur?",
+          "correct answer": "A",
+          "description": "Statyn av Selma Lagerlöf invigdes år 1958  till hundraårsminnet av när hon föddes."
+      },
+      {
+          "id": "11",
+          "title": "Torgdammen",
+          "artist": "Ove Lindblom",
+          "year": "1989",
+          "location": "[59.3832773, 13.5026428]",
+          "clue": "Vilken är den femte bokstaven i den andra raden på skylten till denna skulptur?",
+          "correct answer": "I",
+          "description": "Detta konstverk fanns från början på Stora torget men flyttades då torget skulle göras om år 1995. Konstverket handlar om förhållandet mellan människan och naturen."
+      },
+      {
+          "id": "12",
+          "title": "Sveno Elfdalius",
+          "artist": "Carl Eldh",
+          "year": "1929",
+          "location": "[59.3812395, 13.5064516]",
+          "clue": "Detta är en skulptur av Sveno Elfdalius. På skulpturen står ännu ett av hans namn. Vad börjar det namnet med för bokstav?",
+          "correct answer": "C",
+          "description": "Elfdalius arbetade som rektor och kyrkoherde. Han lade grunden till det som skulle bli Karlstads första gymnasium."
+      },
+      {
+          "id": "13",
+          "title": "Bokmoln",
+          "artist": "Peder Istad",
+          "year": "2015",
+          "location": "[59.383250, 13.502169]",
+          "clue": "Vilken är den sista bokstaven på andra raden på skylten i marken bredvid detta konstverk?",
+          "correct answer": "D",
+          "description": "Denna skulptur är gjord i Tolgagranit och står utanför Stadsbiblioteket. I molnens mellanrum kan man se en bok framträda."
+      },
+      {
+          "id": "14",
+          "title": "Handen",
+          "artist": "Eugen Krajcik",
+          "year": "1994",
+          "location": "[59.3820438, 13.5121201]",
+          "clue": "Skulpturen har ett särskilt märke till vänster på skylten. Vad är första bokstaven på märket?",
+          "correct answer": "C",
+          "description": "Denna hand är tillverkad av nätarmerad fiberputs och kom till för att piffa upp byggnaden där det enbart var en rund betongpelare innan!"
+      },
+      {
+          "id": "15",
+          "title": "Vändande lodjur",
+          "artist": "Arvid Knöppel",
+          "year": "1952",
+          "location": "[59.3876854, 13.5076532]",
+          "clue": "I den andra raden på skulpturens skylt förekommer en bokstav två gånger. Vilken bokstav är det?",
+          "correct answer": "P",
+          "description": "Lodjurets skapare bodde på en gård i närheten av Arvika och hade där ett reservat för nordiska vilda djur. Han är känd för sina djurskulpturer och djurteckningar."
+      },
+      {
+          "id": "16",
+          "title": "Sven Erik Magnusson",
+          "artist": "Assa Kauppi",
+          "year": "2020",
+          "location": "[59.386277, 13.498823]",
+          "clue": "Vilken bokstav är den fjärde att hitta på skulpturens skylts första rad?",
+          "correct answer": "L",
+          "description": "Denna skulptur är en hyllning till den kända Sven-Erik Magnusson från dansbandet Sven-Ingvars. Den är gjord i brons. Bredvid honom finns även en gitarr samt en mikrofon!"
+      },
+      {
+          "id": "17",
+          "title": "Ferlin steppar",
+          "artist": "Thomas Qvarsebo",
+          "year": "2002",
+          "location": "[59.381111, 13.501831]",
+          "clue": "På bordet som tillhör denna skulptur finns en dikt. Vilken är den åttonde bokstaven i diktens tredje rad?",
+          "correct answer": "Y",
+          "description": "Nils Ferlin föddes i Karlstad, Klara, år 1898 och där bodde han sina första tio år i livet."
+      },
+      {
+          "id": "18",
+          "title": "Fröding",
+          "artist": "Herman Reijers",
+          "year": "1996",
+          "location": "[59.380384, 13.501843]",
+          "clue": "På skylten på husfasaden en bit från denna skulptur står det vilken månad statyn restes. Vilken bokstav börjar denna månad med?",
+          "correct answer": "A",
+          "description": "Gustaf Fröding bodde i Karlstad men trivdes inte där på grund av att överklassen var upprörda över att han var så kontroversiell vilket gjorde att han inte kände sig omtyckt."
+      },
+      {
+          "id": "19",
+          "title": "Fredsmonumentet",
+          "artist": "Ivar Johnsson",
+          "year": "1955",
+          "location": "[59.380735, 13.502403]",
+          "clue": "Längst ner på skylten till Fredsmonumentet finns en mening där alla ord börjar på samma bokstav, vilken?",
+          "correct answer": "F",
+          "description": "Detta monuments utseende har diskuterats mycket genom åren och det har kallats bland annat \"skräcktanten\", \"skräckens monument\" samt utsetts till Sveriges fulaste staty i ett TV-program."
+      },
+      {
+          "id": "20",
+          "title": "Vindarnas boning",
+          "artist": "Aimo Tukiainen",
+          "year": "1967",
+          "location": "[59.381592, 13.497686]",
+          "clue": "På detta konstverk kan man på sidan som vetter mot älven läsa en textrad. Vilken är den sista bokstaven i denna textrad?",
+          "correct answer": "I",
+          "description": "Denna skulptur är skapad till minne över de människor som kom från Finland till Sverige från 1500-talet och framåt. Då många kom till just Värmland så placerades denna skulptur i Karlstad."
+      }
   ]
