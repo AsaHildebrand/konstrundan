@@ -9,13 +9,13 @@ import { readFile } from 'fs/promises'
 
 const artWorksKarlstad = JSON.parse(
   await readFile(
-    new URL('./data/karlstadny.json', import.meta.url)
+    new URL('./data/karlstaddiv.json', import.meta.url)
   )
 )
 
 const artWorksUppsala = JSON.parse(
   await readFile(
-    new URL('./data/uppsalany.json', import.meta.url)
+    new URL('./data/uppsaladiv.json', import.meta.url)
   )
 )
 
@@ -88,15 +88,8 @@ const artWorkSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
-  location: {
-    type: {
-      type: String,
-      enum: ['Point'],
-    },
-    coordinates: {
-      type: [Number],
-    }
-  },
+  lat: {type: mongoose.Types.Decimal128},
+  lng: {type: mongoose.Types.Decimal128},
   clue: {
     type: String,
     required: true
@@ -111,6 +104,21 @@ const artWorkSchema = new mongoose.Schema({
     required: true
   }
 })
+
+
+// GeoJson format
+// location: {
+//   type: {
+//     type: String,
+//     enum: ['Point'],
+//   },
+//   coordinates: {
+//     type: [Number],
+//   }
+// },
+
+//Doesn't work
+//location: { type: Array }
 
 artWorkSchema.index({location: '2dsphere' });
 
