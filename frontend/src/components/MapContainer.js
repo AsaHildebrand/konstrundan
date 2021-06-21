@@ -29,6 +29,7 @@ const InnerContainer = styled.div`
 const MapContainer = () => {
   const [locations, setLocations] = useState([]);
   const currentCity = useSelector((store) => store.city.currentCity);
+  const accessToken = useSelector(store => store.user.accessToken)
   console.log(currentCity);
 
   const dispatch = useDispatch();
@@ -38,13 +39,20 @@ const MapContainer = () => {
     if (!currentCity) {
       history.push("/cities");
     } else if (currentCity) {
-
-      fetch(MAP_URL(currentCity.city))
+      const options = {
+        method: "GET",
+        headers: {
+          Authorization: accessToken
+        }
+      }
+      fetch(MAP_URL(currentCity.city), options)
         .then((res) => res.json())
         .then((json) => setLocations(json)) 
-    }
+      }    
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  console.log(locations)
 
   const markerColor = "blue"
 

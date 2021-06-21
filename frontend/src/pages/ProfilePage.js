@@ -77,7 +77,14 @@ const ProfilePage = () => {
     if (userId) {
       console.log(userId)
       const currentCity1 = "Karlstad"
-      fetch(RESOLVED_URL(currentCity1, userId))
+      const options = {
+        method: "GET",
+        headers: {
+          Authorization: accessToken
+        }
+      }
+
+      fetch(RESOLVED_URL(currentCity1, userId), options)
         .then((res) => res.json())
         .then((data) => {
           if (data.success === true) {
@@ -96,7 +103,15 @@ const ProfilePage = () => {
     if (userId) {
       console.log(userId)
       const currentCity2 = "Uppsala"
-      fetch(RESOLVED_URL(currentCity2, userId))
+
+      const options = {
+        method: "GET",
+        headers: {
+          Authorization: accessToken
+        }
+      }
+
+      fetch(RESOLVED_URL(currentCity2, userId), options)
         .then((res) => res.json())
         .then((data) => {
           if (data.success === true) {
