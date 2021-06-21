@@ -167,7 +167,7 @@ app.get('/artworks/Uppsala', async (req, res) => {
   res.json(artWorks)
 })
 
-app.get('/artworks/Karlstad(:id', authenticateUser)
+app.get('/artworks/Karlstad/:id', authenticateUser)
 app.get('/artworks/Karlstad/:id', async (req, res) => {
   const { id } = req.params
   const selectedArtwork = await ArtWorkKarlstad.findById(id)
