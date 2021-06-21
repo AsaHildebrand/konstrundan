@@ -203,7 +203,7 @@ app.get('/resolved-artworks/Uppsala/:id', authenticateUser)
 app.get('/resolved-artworks/Uppsala/:id', async (req, res) => {
   const { id } = req.params
   try {
-    const resolvedArtWorksByUser = await resolvedArtWorkUppsala.findOne({ user: id }).populate({ path: 'artwork', select: ['title', 'id'] })
+    const resolvedArtWorksByUser = await resolvedArtWorkUppsala.find({ user: id }).populate({ path: 'artwork', select: ['title', 'id'] })
     res.status(201).json({ success: true, resolvedArtWorksByUser })
   } catch (err) {
     res.status(400).json({ success: false, message: 'Kunde inte hitta användare', error: err })
