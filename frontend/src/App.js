@@ -18,7 +18,7 @@ import city from "./reducers/city";
 const reducer = combineReducers({
   user: user.reducer,
   artwork: artwork.reducer,
-  city: city.reducer
+  city: city.reducer,
 });
 const store = configureStore({ reducer });
 

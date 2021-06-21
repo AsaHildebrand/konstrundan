@@ -31,7 +31,7 @@ const Main = () => {
   return (
     <BrowserRouter>
       <Container>
-        <NavBar/>
+        <NavBar />
           <Switch>
             <Route exact path="/">
             {artworkId && <SelectedArtwork/>}

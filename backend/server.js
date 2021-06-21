@@ -9,13 +9,13 @@ import { readFile } from 'fs/promises'
 
 const artWorksKarlstad = JSON.parse(
   await readFile(
-    new URL('./data/karlstadny.json', import.meta.url)
+    new URL('./data/karlstad.json', import.meta.url)
   )
 )
 
 const artWorksUppsala = JSON.parse(
   await readFile(
-    new URL('./data/uppsalany.json', import.meta.url)
+    new URL('./data/uppsala.json', import.meta.url)
   )
 )
 
@@ -95,11 +95,6 @@ const artWorkSchema = new mongoose.Schema({
   },
   correctAnswer: {
     type: String,
-    required: true,
-    maxlength: 1
-  },
-  description: {
-    type: String,
     required: true
   }
 })
@@ -114,7 +109,6 @@ const authenticateUser = async (req, res, next) => {
   try {
     const user = await User.findOne({ accessToken })
     if (user) {
-      req.user = user
       next()
     } else {
       res.status(401).json({ success: false, message: 'Not authorized' })
@@ -143,13 +137,8 @@ if (process.env.RESET_DB) {
 const port = process.env.PORT || 8080
 const app = express()
 
-// var corsOptions = {
-//   origin: ["http://localhost:3000", , "https://konstrundan.netlify.app"]
-// }
 // Add middlewares to enable cors and json body parsing
-// app.use(cors(corsOptions))
-// app.use(express.json())
-app.use(cors)
+app.use(cors())
 app.use(express.json())
 
 // Start defining your routes here
@@ -157,19 +146,17 @@ app.get('/', (req, res) => {
   res.send(listEndpoints(app))
 })
 
-// app.get('/artworks/Karlstad', authenticateUser)
+//Should we add authenticateUser to this?
 app.get('/artworks/Karlstad', async (req, res) => {
   const artWorks = await ArtWorkKarlstad.find()
   res.json(artWorks)
 })
 
-// app.get('/artworks/Uppsala', authenticateUser)
 app.get('/artworks/Uppsala', async (req, res) => {
   const artWorks = await ArtWorkUppsala.find()
   res.json(artWorks)
 })
 
-// app.get('/artworks/Karlstad/:id', authenticateUser)
 app.get('/artworks/Karlstad/:id', async (req, res) => {
   const { id } = req.params
   const selectedArtwork = await ArtWorkKarlstad.findById(id)
@@ -180,7 +167,6 @@ app.get('/artworks/Karlstad/:id', async (req, res) => {
   }
 })
 
-// app.get('/artworks/Uppsala/:id', authenticateUser)
 app.get('/artworks/Uppsala/:id', async (req, res) => {
   const { id } = req.params
   const selectedArtwork = await ArtWorkUppsala.findById(id)
@@ -191,7 +177,6 @@ app.get('/artworks/Uppsala/:id', async (req, res) => {
   }
 })
 
-// app.get('/resolved-artworks/Karlstad/:id', authenticateUser)
 app.get('/resolved-artworks/Karlstad/:id', async (req, res) => {
   const { id } = req.params
   try {
@@ -201,7 +186,7 @@ app.get('/resolved-artworks/Karlstad/:id', async (req, res) => {
     res.status(400).json({ success: false, message: 'Kunde inte hitta användare', error: err })
   }
 })
-// app.get('/resolved-artworks/Uppsala/:id', authenticateUser)
+
 app.get('/resolved-artworks/Uppsala/:id', async (req, res) => {
   const { id } = req.params
   try {
@@ -211,14 +196,14 @@ app.get('/resolved-artworks/Uppsala/:id', async (req, res) => {
     res.status(400).json({ success: false, message: 'Kunde inte hitta användare', error: err })
   }
 })
-// app.post('/resolved-artworks/Karlstad', authenticateUser)
+
 app.post('/resolved-artworks/Karlstad', async (req, res) => {
   const { artworkId, userId } = req.body
   try {
     const existingArtwork = await resolvedArtWorkKarlstad.findOne({ artwork: artworkId, user: userId })
     if (existingArtwork) {
       res.status(201).json({ success: true, message: 'Du har redan sparat detta konstverk.', existingArtwork })
-    } else if (!existingArtwork) {
+    } else {
       const resolvedArtwork = new resolvedArtWorkKarlstad({ artwork: artworkId, user: userId })
       const savedResolvedArtwork = await resolvedArtwork.save()
       res.status(201).json({ success: true, savedResolvedArtwork })
@@ -228,14 +213,13 @@ app.post('/resolved-artworks/Karlstad', async (req, res) => {
   }
 })
 
-// app.post('/resolved-artworks/Uppsala', authenticateUser)
 app.post('/resolved-artworks/Uppsala', async (req, res) => {
   const { artworkId, userId } = req.body
   try {
     const existingArtwork = await resolvedArtWorkUppsala.findOne({ artwork: artworkId, user: userId })
     if (existingArtwork) {
       res.status(201).json({ success: true, message: 'Du har redan sparat detta konstverk.', existingArtwork })
-    } else if (!existingArtwork) {
+    } else {
       const resolvedArtwork = new resolvedArtWorkUppsala({ artwork: artworkId, user: userId })
       const savedResolvedArtwork = await resolvedArtwork.save()
       res.status(201).json({ success: true, savedResolvedArtwork })
