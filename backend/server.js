@@ -157,13 +157,13 @@ app.get('/', (req, res) => {
   res.send(listEndpoints(app))
 })
 
-app.get('/artworks/Karlstad', authenticateUser)
+// app.get('/artworks/Karlstad', authenticateUser)
 app.get('/artworks/Karlstad', async (req, res) => {
   const artWorks = await ArtWorkKarlstad.find()
   res.json(artWorks)
 })
 
-app.get('/artworks/Uppsala', authenticateUser)
+// app.get('/artworks/Uppsala', authenticateUser)
 app.get('/artworks/Uppsala', async (req, res) => {
   const artWorks = await ArtWorkUppsala.find()
   res.json(artWorks)
