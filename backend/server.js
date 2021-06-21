@@ -88,14 +88,7 @@ const artWorkSchema = new mongoose.Schema({
     type: Number,
     required: true
   },
-  lat: {
-    type: String,
-    required: true
-  },
-  lng: {
-    type: String,
-    required: true
-  },
+  location: { type: Object },
   clue: {
     type: String,
     required: true
