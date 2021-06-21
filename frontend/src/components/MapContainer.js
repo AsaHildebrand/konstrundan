@@ -43,14 +43,15 @@ const MapContainer = () => {
         .then((res) => res.json())
         .then((json) => {
           const changedArtworks = json.forEach(item => {
-            item.lat = parseFloat(item.lat)});
-          
-          changedArtworks.forEach(item => {
-              item.lng = parseFloat(item.lng)
-            }
+            item.lat = parseFloat(item.lat)
+          });
+
+          const doublechangedArtworks = changedArtworks.forEach(item => {
+            item.lng = parseFloat(item.lng)
+          }
           )
           setLocations(doublechangedArtworks);
-        })    
+        })
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -106,7 +107,7 @@ const MapContainer = () => {
 
   const markerColor = "brown"
 
-  
+
 
   return (
     currentCity && (
