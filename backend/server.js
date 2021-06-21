@@ -143,11 +143,13 @@ if (process.env.RESET_DB) {
 const port = process.env.PORT || 8080
 const app = express()
 
-var corsOptions = {
-  origin: ["http://localhost:3000", , "https://konstrundan.netlify.app"]
-}
+// var corsOptions = {
+//   origin: ["http://localhost:3000", , "https://konstrundan.netlify.app"]
+// }
 // Add middlewares to enable cors and json body parsing
-app.use(cors(corsOptions))
+// app.use(cors(corsOptions))
+// app.use(express.json())
+app.use(cors)
 app.use(express.json())
 
 // Start defining your routes here
@@ -193,7 +195,7 @@ app.get('/resolved-artworks/Karlstad/:id', authenticateUser)
 app.get('/resolved-artworks/Karlstad/:id', async (req, res) => {
   const { id } = req.params
   try {
-    const resolvedArtWorksByUser = await resolvedArtWorkKarlstad.find({ user: id }).populate({ path: 'artwork', select: ['title', 'id']})
+    const resolvedArtWorksByUser = await resolvedArtWorkKarlstad.find({ user: id }).populate({ path: 'artwork', select: ['title', 'id'] })
     res.status(201).json({ success: true, resolvedArtWorksByUser })
   } catch (err) {
     res.status(400).json({ success: false, message: 'Kunde inte hitta användare', error: err })
@@ -216,7 +218,7 @@ app.post('/resolved-artworks/Karlstad', async (req, res) => {
     const existingArtwork = await resolvedArtWorkKarlstad.findOne({ artwork: artworkId, user: userId })
     if (existingArtwork) {
       res.status(201).json({ success: true, message: 'Du har redan sparat detta konstverk.', existingArtwork })
-    } else if (!existingArtwork){
+    } else if (!existingArtwork) {
       const resolvedArtwork = new resolvedArtWorkKarlstad({ artwork: artworkId, user: userId })
       const savedResolvedArtwork = await resolvedArtwork.save()
       res.status(201).json({ success: true, savedResolvedArtwork })
@@ -233,7 +235,7 @@ app.post('/resolved-artworks/Uppsala', async (req, res) => {
     const existingArtwork = await resolvedArtWorkUppsala.findOne({ artwork: artworkId, user: userId })
     if (existingArtwork) {
       res.status(201).json({ success: true, message: 'Du har redan sparat detta konstverk.', existingArtwork })
-    } else if (!existingArtwork){
+    } else if (!existingArtwork) {
       const resolvedArtwork = new resolvedArtWorkUppsala({ artwork: artworkId, user: userId })
       const savedResolvedArtwork = await resolvedArtwork.save()
       res.status(201).json({ success: true, savedResolvedArtwork })
