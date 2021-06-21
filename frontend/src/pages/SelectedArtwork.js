@@ -92,6 +92,7 @@ const SelectedArtworks = () => {
   const onFormSubmit = (event) => {
     event.preventDefault();
     setAnswerIsSubmitted(true);
+    console.log(selectedArtwork.correctAnswer)
     if (newAnswer.toLowerCase() === selectedArtwork.correctAnswer.toLowerCase()) {
       setAnswerIsCorrect(true)
       const options = {
@@ -100,7 +101,6 @@ const SelectedArtworks = () => {
           Authorization: accessToken,
           'Content-Type': 'application/json'
         },
-        //We haven't prepared the endpoint cause we don't know what the schema should look like =(, so we don't know what to send
         body: JSON.stringify({ artworkId, userId })
       };
       fetch(ANSWER_URL(currentCity), options)
@@ -114,6 +114,7 @@ const SelectedArtworks = () => {
       } )
       console.log(artworkId)
       console.log(userId)
+      
     } else { 
       console.log("Fel Svar!")
       setAnswerIsCorrect(false)}
@@ -124,6 +125,7 @@ const SelectedArtworks = () => {
   }
 
   console.log(newAnswer)
+  
 
   return (
     selectedArtwork && (

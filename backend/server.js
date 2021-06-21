@@ -105,23 +105,6 @@ const artWorkSchema = new mongoose.Schema({
 })
 
 
-// GeoJson format
-// location: {
-//   type: {
-//     type: String,
-//     enum: ['Point'],
-//   },
-//   coordinates: {
-//     type: [Number],
-//   }
-// },
-
-//Doesn't work
-//location: { type: Array }
-
-artWorkSchema.index({location: '2dsphere' });
-
-
 const ArtWorkKarlstad = mongoose.model('ArtWorkKarlstad', artWorkSchema)
 const ArtWorkUppsala = mongoose.model('ArtWorkUppsala', artWorkSchema)
 
