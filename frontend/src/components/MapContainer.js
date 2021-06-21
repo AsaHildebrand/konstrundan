@@ -95,12 +95,12 @@ const MapContainer = () => {
       <Container>
         <InnerContainer>
           <Map defaultCenter={currentCity.center} defaultZoom={currentCity.zoom}>
-            {testLocations.map((item) => {
+            {locations.map((item) => {
               return (
                 <Marker
                   key={item.title}
                   width={50}
-                  anchor={item.location}
+                  anchor={[item.location.lat, item.location.lng]}
                   color={markerColor}
                   onClick={() =>
                     dispatch(artwork.actions.setArtworkId(item._id))
