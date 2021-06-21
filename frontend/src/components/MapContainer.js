@@ -41,31 +41,10 @@ const MapContainer = () => {
 
       fetch(MAP_URL(currentCity.city))
         .then((res) => res.json())
-        .then((json) => {
-          const changedArtworks = json.forEach(item => {
-            item.lat = parseFloat(item.lat)
-          });
-
-          const doublechangedArtworks = changedArtworks.forEach(item => {
-            item.lng = parseFloat(item.lng)
-          }
-          )
-          setLocations(doublechangedArtworks);
-        })
+        .then((json) => setLocations(json)) 
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  // const test = "59.3820127"
-  // const log = parseFloat(test)
-  // console.log(log)
-
-  // locations.forEach(item => {
-  //   item.lat = parseFloat(item.lat)
-  //   item.lng = parseFloat(item.lng))
-  // }
-  //   return locations;
-  //   console.log(locations)
 
   const testLocations =
 
@@ -105,9 +84,9 @@ const MapContainer = () => {
       }
     ]
 
-  const markerColor = "brown"
+  const markerColor = "blue"
 
-
+  
 
   return (
     currentCity && (
@@ -119,7 +98,7 @@ const MapContainer = () => {
                 <Marker
                   key={item.title}
                   width={50}
-                  anchor={[item.lat, item.lng]}
+                  anchor={[item.location.lat, item.location.lng]}
                   color={markerColor}
                   onClick={() =>
                     dispatch(artwork.actions.setArtworkId(item._id))
