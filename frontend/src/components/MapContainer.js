@@ -47,8 +47,8 @@ const MapContainer = () => {
       }
       fetch(MAP_URL(currentCity.city), options)
         .then((res) => res.json())
-        .then((json) => setLocations(json)) 
-      }    
+        .then((json) => setLocations(json))
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
