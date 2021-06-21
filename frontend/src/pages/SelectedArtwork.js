@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector, useDispatch, batch } from "react-redux";
 import { useHistory } from 'react-router-dom'
 import styled from "styled-components/macro";
 
@@ -8,6 +8,7 @@ import SubmitButton from "../components/SubmitButton";
 
 import { ARTWORK_URL, ANSWER_URL } from "../reusable/urls";
 import artwork from "../reducers/artwork";
+import user from "../reducers/user";
 
 const Container = styled.div`
   width: 100vw;
@@ -113,9 +114,34 @@ const SelectedArtworks = () => {
       fetch(ANSWER_URL(currentCity), options)
       .then(res => res.json())
       .then(data =>{
-        if (data.success === true) {
-          console.log(data)
-        } else {
+        if (data.success === true && currentCity === "Karlstad") {
+          batch(() => {
+            dispatch(user.actions.setResolvedKarlstad(data.artwork))
+            dispatch(user.actions.setResolvedKarlstad(data.user))
+            dispatch(user.actions.setErrors(null))
+            console.log(data.artwork)
+          })
+          localStorage.setItem("user", JSON.stringify({
+            username: data.username,
+            accessToken: data.accessToken,
+            userId: data.userId,
+            resolvedKarlstad: data.artwork
+          }))
+        } else if (data.success === true && currentCity === "Uppsala") {
+          batch(() => {
+            dispatch(user.actions.setResolvedUppsala(data.artwork))
+            dispatch(user.actions.setResolvedUppsala(data.user))
+            dispatch(user.actions.setErrors(null))
+            console.log(data.artwork)
+          })
+          localStorage.setItem("user", JSON.stringify({
+            username: data.username,
+            accessToken: data.accessToken,
+            userId: data.userId,
+            resolvedUppsala: data.artwork
+          }))
+        }
+        else {
           console.log("Det gick åt skogen")
         }
       } )

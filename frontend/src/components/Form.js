@@ -85,7 +85,7 @@ const Form = ({ username, setUsername, password, setPassword, mode, title, link,
           localStorage.setItem("user", JSON.stringify({
             username: data.username,
             accessToken: data.accessToken,
-            userId: data.userId
+            userId: data.userId,
           }))
         } else {
           dispatch(user.actions.setErrors(data))

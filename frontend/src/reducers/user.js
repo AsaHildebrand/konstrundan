@@ -6,16 +6,16 @@ const initialState = localStorage.getItem('user')
     username: JSON.parse(localStorage.getItem('user')).username,
     accessToken: JSON.parse(localStorage.getItem('user')).accessToken,
     errors: null,
-    resolvedKarlstad: [],
-    resolvedUppsala: []
+    // resolvedKarlstad: JSON.parse(localStorage.getItem('user')).resolvedKarlstad,
+    // resolvedUppsala: JSON.parse(localStorage.getItem('user')).resolvedUppsala
   }
   : {
     userId: null,
     username: null,
     accessToken: null,
     errors: null,
-    resolvedKarlstad: [],
-    resolvedUppsala: []
+    // resolvedKarlstad: [],
+    // resolvedUppsala: []
   }
 
 const user = createSlice({
@@ -34,12 +34,12 @@ const user = createSlice({
     setErrors: (store, action) => {
       store.errors = action.payload
     },
-    setResolvedKarlstad: (store, action) => {
-      store.resolvedKarlstad = action.payload
-    },
-    setResolvedUppsala: (store, action) => {
-      store.resolvedUppsala = action.payload
-    }
+    // setResolvedKarlstad: (store, action) => {
+    //   store.resolvedKarlstad = action.payload
+    // },
+    // setResolvedUppsala: (store, action) => {
+    //   store.resolvedUppsala = action.payload
+    // }
   }
 })
 
