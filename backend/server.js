@@ -203,7 +203,7 @@ app.get('/resolved-artworks/Uppsala/:id', authenticateUser)
 app.get('/resolved-artworks/Uppsala/:id', async (req, res) => {
   const { id } = req.params
   try {
-    const resolvedArtWorksByUser = await resolvedArtWorkUppsala.find({ user: id }).populate({ path: 'artwork', select: ['title', 'id'] })
+    const resolvedArtWorksByUser = await resolvedArtWorkUppsala.findOne({ user: id }).populate({ path: 'artwork', select: ['title', 'id'] })
     res.status(201).json({ success: true, resolvedArtWorksByUser })
   } catch (err) {
     res.status(400).json({ success: false, message: 'Kunde inte hitta användare', error: err })
@@ -213,10 +213,10 @@ app.post('/resolved-artworks/Karlstad', authenticateUser)
 app.post('/resolved-artworks/Karlstad', async (req, res) => {
   const { artworkId, userId } = req.body
   try {
-    const existingArtwork = await resolvedArtWorkKarlstad.find({ artwork: artworkId, user: userId })
+    const existingArtwork = await resolvedArtWorkKarlstad.findOne({ artwork: artworkId, user: userId })
     if (existingArtwork) {
       res.status(201).json({ success: true, message: 'Du har redan sparat detta konstverk.', existingArtwork })
-    } else {
+    } else if (!existingArtwork){
       const resolvedArtwork = new resolvedArtWorkKarlstad({ artwork: artworkId, user: userId })
       const savedResolvedArtwork = await resolvedArtwork.save()
       res.status(201).json({ success: true, savedResolvedArtwork })
@@ -232,7 +232,7 @@ app.post('/resolved-artworks/Uppsala', async (req, res) => {
     const existingArtwork = await resolvedArtWorkUppsala.find({ artwork: artworkId, user: userId })
     if (existingArtwork) {
       res.status(201).json({ success: true, message: 'Du har redan sparat detta konstverk.', existingArtwork })
-    } else {
+    } else if (!existingArtwork){
       const resolvedArtwork = new resolvedArtWorkUppsala({ artwork: artworkId, user: userId })
       const savedResolvedArtwork = await resolvedArtwork.save()
       res.status(201).json({ success: true, savedResolvedArtwork })
