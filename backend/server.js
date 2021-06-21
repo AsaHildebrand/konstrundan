@@ -114,6 +114,7 @@ const authenticateUser = async (req, res, next) => {
   try {
     const user = await User.findOne({ accessToken })
     if (user) {
+      req.user = user
       next()
     } else {
       res.status(401).json({ success: false, message: 'Not authorized' })
