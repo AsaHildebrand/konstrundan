@@ -23,7 +23,7 @@ const Container = styled.nav`
 const NavBar = () => {
   const accessToken = useSelector((store) => store.user.accessToken)
 
-  return (
+  return(
     accessToken &&
     <Container>
       <MapLink/>

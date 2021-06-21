@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import styled from 'styled-components'
@@ -59,11 +59,13 @@ const Text = styled.p`
 
 
 const ProfilePage = () => {
+  const [resolvedUppsala, setResolvedUppsala] = useState()
+  const [resolvedKarlstad, setResolvedKarlstad] = useState()
   const username = useSelector((store) => store.user.username)
   const accessToken = useSelector((store) => store.user.accessToken)
   const userId = useSelector((store) => store.user.userId)
-  const resolvedKarlstad = useSelector((store) => store.user.resolvedKarlstad)
-  const resolvedUppsala = useSelector((store) => store.user.resolvedUppsala)
+  // const resolvedKarlstad = useSelector((store) => store.user.resolvedKarlstad)
+  // const resolvedUppsala = useSelector((store) => store.user.resolvedUppsala)
   const dispatch = useDispatch()
   const history = useHistory()
 
@@ -77,20 +79,21 @@ const ProfilePage = () => {
     if (userId) {
       console.log(userId)
       const currentCity1 = "Karlstad"
-      const options = {
-        method: "GET",
-        headers: {
-          Authorization: accessToken
-        }
-      }
+      // const options = {
+      //   method: "GET",
+      //   headers: {
+      //     Authorization: accessToken
+      //   }
+      // }
 
-      fetch(RESOLVED_URL(currentCity1, userId), options)
+      // fetch(RESOLVED_URL(currentCity1, userId), options)
+      fetch(RESOLVED_URL(currentCity1, userId))
         .then((res) => res.json())
         .then((data) => {
           if (data.success === true) {
         
             //kan vi mappa och få ut bara array mede artwork?
-            dispatch(user.actions.setResolvedKarlstad(data.resolvedArtWorksByUser))
+            setResolvedKarlstad(data.resolvedArtWorksByUser)
           } else {
             console.log("Den gubben gick inte!")
           }
@@ -104,20 +107,21 @@ const ProfilePage = () => {
       console.log(userId)
       const currentCity2 = "Uppsala"
 
-      const options = {
-        method: "GET",
-        headers: {
-          Authorization: accessToken
-        }
-      }
+      // const options = {
+      //   method: "GET",
+      //   headers: {
+      //     Authorization: accessToken
+      //   }
+      // }
 
-      fetch(RESOLVED_URL(currentCity2, userId), options)
+      // fetch(RESOLVED_URL(currentCity2, userId), options)
+      fetch(RESOLVED_URL(currentCity2, userId))
         .then((res) => res.json())
         .then((data) => {
           if (data.success === true) {
             
             //kan vi mappa och få ut bara array mede artwork?
-            dispatch(user.actions.setResolvedUppsala(data.resolvedArtWorksByUser))
+            setResolvedUppsala(data.resolvedArtWorksByUser)
           } else {
             console.log("Den gubben gick inte!")
           }

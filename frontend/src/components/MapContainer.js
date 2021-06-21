@@ -39,13 +39,14 @@ const MapContainer = () => {
     if (!currentCity) {
       history.push("/cities");
     } else if (currentCity) {
-      const options = {
-        method: "GET",
-        headers: {
-          Authorization: accessToken
-        }
-      }
-      fetch(MAP_URL(currentCity.city), options)
+      // const options = {
+      //   method: "GET",
+      //   headers: {
+      //     Authorization: accessToken
+      //   }
+      // }
+      // fetch(MAP_URL(currentCity.city), options)
+      fetch(MAP_URL(currentCity.city))
         .then((res) => res.json())
         .then((json) => setLocations(json))
     }
