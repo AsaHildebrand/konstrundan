@@ -213,7 +213,7 @@ app.post('/resolved-artworks/Karlstad', authenticateUser)
 app.post('/resolved-artworks/Karlstad', async (req, res) => {
   const { artworkId, userId } = req.body
   try {
-    const existingArtwork = await resolvedArtWorkKarlstad.find({ artwork: artworkId, user: userId })
+    const existingArtwork = await resolvedArtWorkKarlstad.findOne({ artwork: artworkId, user: userId })
     if (existingArtwork) {
       res.status(201).json({ success: true, message: 'Du har redan sparat detta konstverk.', existingArtwork })
     } else if (!existingArtwork){
@@ -225,11 +225,12 @@ app.post('/resolved-artworks/Karlstad', async (req, res) => {
     res.status(400).json({ success: false, message: 'Kunde inte spara det funna konstverket till databasen.', error: err.errors })
   }
 })
+
 app.post('/resolved-artworks/Uppsala', authenticateUser)
 app.post('/resolved-artworks/Uppsala', async (req, res) => {
   const { artworkId, userId } = req.body
   try {
-    const existingArtwork = await resolvedArtWorkUppsala.find({ artwork: artworkId, user: userId })
+    const existingArtwork = await resolvedArtWorkUppsala.findOne({ artwork: artworkId, user: userId })
     if (existingArtwork) {
       res.status(201).json({ success: true, message: 'Du har redan sparat detta konstverk.', existingArtwork })
     } else if (!existingArtwork){
