@@ -52,11 +52,8 @@ const WelcomeText = styled.p`
 const Text = styled.p`
 @media (min-width: 1024px) {
 
-}
-  
+} 
 `
-
-
 
 const ProfilePage = () => {
   const username = useSelector((store) => store.user.username)
@@ -108,11 +105,12 @@ const ProfilePage = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
-  
-  
-  // const sortId = resolvedKarlstad.artwork.id
-  // resolvedKarlstad.sort((a, b) => (a.sortId > b.sortId) ? 1 : -1)
-  console.log(resolvedKarlstad)
+
+  const sortedKarlstad = resolvedKarlstad.slice().sort((a, b) => (a.artwork.id > b.artwork.id) ? 1 : -1)
+  console.log(sortedKarlstad)
+
+  const sortedUppsala = resolvedUppsala.slice().sort((a, b) => (a.artwork.id > b.artwork.id) ? 1 : -1)
+  console.log(sortedUppsala)
 
   return (
     <Container>
@@ -120,7 +118,7 @@ const ProfilePage = () => {
       <ResolvedContainer>
         <ListContainer>
           <h2>Karlstad</h2>
-          {resolvedKarlstad.map((item) => {
+          {sortedKarlstad.map((item) => {
             return (
               <>
                 <Text>{item.artwork.id}.{" "}{item.artwork.title}</Text>
@@ -130,7 +128,7 @@ const ProfilePage = () => {
         </ListContainer>
         <ListContainer>
           <h2>Uppsala</h2>
-          {resolvedUppsala.map((item) => {
+          {sortedUppsala.map((item) => {
             return (
               <>
                 <Text>{item.artwork.id}.{" "}{item.artwork.title}</Text>
