@@ -1,4 +1,5 @@
 const BASE_URL = "https://konstrundan.herokuapp.com/";
+// const BASE_URL = "localhost:8080/";
 
 export const USER_URL = (mode) => `${BASE_URL}${mode}`
 
