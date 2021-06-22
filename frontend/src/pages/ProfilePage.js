@@ -19,7 +19,7 @@ const Container = styled.div`
 `;
 
 const ListContainer = styled.div`
-  padding: 20px;
+  padding: 0 10px;
   width: 120px;
   font-family: "Arial";
   font-style: normal;
@@ -31,17 +31,32 @@ const ListContainer = styled.div`
   }
 `
 
-const ResolvedContainer = styled.div`
+const ResolvedOuterContainer = styled.div`
+  background-color: #f1dbb3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  padding: 20px;
+
+  @media (min-width: 1024px) {
+   
+  }
+`
+const ResolvedInnerContainer = styled.div`
   background-color: #f1dbb3;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: flex-start;
-  margin: 20px;
 
   @media (min-width: 1024px) {
    
   }
+`
+const Header = styled.h2`
+margin: 0;
 `
 
 const WelcomeText = styled.p`
@@ -50,6 +65,7 @@ const WelcomeText = styled.p`
 `
 
 const Text = styled.p`
+font-size: 16px;
 @media (min-width: 1024px) {
 
 } 
@@ -115,28 +131,32 @@ const ProfilePage = () => {
   return (
     <Container>
       <WelcomeText>Välkommen {username}!</WelcomeText>
-      <ResolvedContainer>
-        <ListContainer>
-          <h2>Karlstad</h2>
-          {sortedKarlstad.map((item) => {
-            return (
-              <>
-                <Text>{item.artwork.id}.{" "}{item.artwork.title}</Text>
-              </>
-            )
-          })}
-        </ListContainer>
-        <ListContainer>
-          <h2>Uppsala</h2>
-          {sortedUppsala.map((item) => {
-            return (
-              <>
-                <Text>{item.artwork.id}.{" "}{item.artwork.title}</Text>
-              </>
-            )
-          })}
-        </ListContainer>
-      </ResolvedContainer>
+
+      <ResolvedOuterContainer>
+        <Header>Funna konstverk</Header>
+        <ResolvedInnerContainer>
+          <ListContainer>
+            <h3>Karlstad</h3>
+            {sortedKarlstad.map((item) => {
+              return (
+                <>
+                  <Text>{item.artwork.id}.{" "}{item.artwork.title}</Text>
+                </>
+              )
+            })}
+          </ListContainer>
+          <ListContainer>
+            <h3>Uppsala</h3>
+            {sortedUppsala.map((item) => {
+              return (
+                <>
+                  <Text>{item.artwork.id}.{" "}{item.artwork.title}</Text>
+                </>
+              )
+            })}
+          </ListContainer>
+        </ResolvedInnerContainer>
+      </ResolvedOuterContainer>
     </Container>
   )
 }
