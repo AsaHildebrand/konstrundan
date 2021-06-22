@@ -55,7 +55,7 @@ const Form = ({ username, setUsername, password, setPassword, mode, title, link,
 
   useEffect(() => {
     if (accessToken) {
-      history.push('/cities')
+      history.push('/')
     }
   }, [accessToken, history])
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
+import { useHistory } from "react-router-dom";
 import styled from "styled-components/macro"
 
 import artwork from '../reducers/artwork'
@@ -23,10 +24,15 @@ align-self: flex-start;
 `
 const BackButton = () => {
   const dispatch = useDispatch()
+  const history = useHistory();
 
   return (
-    <Button onClick={() => dispatch(artwork.actions.setArtworkId(null))} >
-    Tillbaka
+    <Button
+      onClick={() => {
+        history.push("/map")
+        dispatch(artwork.actions.setArtworkId(null))
+      }}>
+      Tillbaka
     </Button>
   )
 }
