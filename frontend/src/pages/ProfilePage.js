@@ -81,7 +81,6 @@ const ProfilePage = () => {
         .then((res) => res.json())
         .then((data) => {
           if (data.success === true) {
-            console.log(data.resolvedArtWorksByUser[0].artwork)
             //kan vi mappa och få ut bara array mede artwork?
             dispatch(user.actions.setResolvedKarlstad(data.resolvedArtWorksByUser))
           } else {
@@ -100,7 +99,6 @@ const ProfilePage = () => {
         .then((res) => res.json())
         .then((data) => {
           if (data.success === true) {
-            console.log(data.resolvedArtWorksByUser[0].artwork)
             //kan vi mappa och få ut bara array mede artwork?
             dispatch(user.actions.setResolvedUppsala(data.resolvedArtWorksByUser))
           } else {
