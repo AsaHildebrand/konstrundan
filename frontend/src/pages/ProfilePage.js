@@ -145,6 +145,7 @@ const ProfilePage = () => {
         <ResolvedInnerContainer>
           <ListContainer>
             <h3>Karlstad</h3>
+            <List>
             {sortedKarlstad.map((item) => {
               return (
                 <>
@@ -152,9 +153,11 @@ const ProfilePage = () => {
                 </>
               )
             })}
+            </List>
           </ListContainer>
           <ListContainer>
             <h3>Uppsala</h3>
+            <List>
             {sortedUppsala.map((item) => {
               return (
                 <>
@@ -162,6 +165,7 @@ const ProfilePage = () => {
                 </>
               )
             })}
+            </List>
           </ListContainer>
         </ResolvedInnerContainer>
       </ResolvedOuterContainer>
