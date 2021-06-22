@@ -38,14 +38,14 @@ const Cities = () => {
 
   const cities = [
     {
-       city: "Karlstad",
-       center: [59.3855, 13.5000],
-       zoom: 13
-     },
-     {
+      city: "Karlstad",
+      center: [59.3855, 13.5000],
+      zoom: 13
+    },
+    {
       city: "Uppsala",
       center: [59.858562, 17.638928],
-       zoom: 11
+      zoom: 11
     },
   ];
 
@@ -54,13 +54,13 @@ const Cities = () => {
       history.push("/login");
     }
   })
-    
+
   return (
     <Container>
       <p>Välj stad!</p>
 
       {cities.map((singleCity) => (
-        <Link exact to="/" key={singleCity.city}>
+        <Link to="/map" key={singleCity.city}>
           <Button
             onClick={() => dispatch(city.actions.setCurrentCity(singleCity))}>
             {singleCity.city}

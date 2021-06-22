@@ -37,8 +37,8 @@ const Title = styled.p`
 `;
 
 const ChangeCityLink = () => {
-  
-  const iconSrc=(
+
+  const iconSrc = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="22"
@@ -53,10 +53,10 @@ const ChangeCityLink = () => {
 
   return (
     <Container>
-      <NavLink exact to="/cities" activeStyle={{ color: "#8D4807" }}>
+      <NavLink exact to="/" activeStyle={{ color: "#8D4807" }}>
         <InnerContainer>
-        {iconSrc}
-        <Title>Byta stad</Title>
+          {iconSrc}
+          <Title>Byta stad</Title>
         </InnerContainer>
       </NavLink>
     </Container>

@@ -30,14 +30,21 @@ const InnerContainer = styled.div`
 const MapContainer = () => {
   const [locations, setLocations] = useState([]);
   const currentCity = useSelector((store) => store.city.currentCity);
+  const accessToken = useSelector(store => store.user.accessToken)
   console.log(currentCity);
 
   const dispatch = useDispatch();
   const history = useHistory();
 
   useEffect(() => {
+    if (!accessToken) {
+      history.push("/login");
+    }
+  })
+
+  useEffect(() => {
     if (!currentCity) {
-      history.push("/cities");
+      history.push("/");
     }
     if (currentCity) {
       fetch(MAP_URL(currentCity.city))
@@ -64,8 +71,10 @@ const MapContainer = () => {
                   width={50}
                   anchor={[item.location.lat, item.location.lng]}
                   color={markerColor}
-                  onClick={() =>
+                  onClick={() => {
                     dispatch(artwork.actions.setArtworkId(item._id))
+                    history.push("/artwork")
+                  }
                   }
                 />
               )

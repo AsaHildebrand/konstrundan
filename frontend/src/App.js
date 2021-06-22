@@ -3,7 +3,8 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 
-import Main from "./pages/Main";
+import MapContainer from './components/MapContainer'
+import SelectedArtwork from './pages/SelectedArtwork'
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Header from "./components/Header";
@@ -28,13 +29,14 @@ export const App = () => {
       <BrowserRouter>
         <Provider store={store}>
           <Header />
-          <NavBar/>
+          <NavBar />
           <Switch>
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
-            <Route exact path="/" component={Main} />
+            <Route exact path="/" component={Cities} />
             <Route path="/min-sida" component={ProfilePage} />
-            <Route path="/cities" component={Cities} />
+            <Route path="/map" component={MapContainer} />
+            <Route path="/artwork" component={SelectedArtwork} />
           </Switch>
         </Provider>
       </BrowserRouter>

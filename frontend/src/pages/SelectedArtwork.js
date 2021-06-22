@@ -61,7 +61,7 @@ const Span = styled.span`
   font-weight: 700;
 `
 
-const SelectedArtworks = () => {
+const SelectedArtwork = () => {
   const [newAnswer, setNewAnswer] = useState('')
   const [answerIsCorrect, setAnswerIsCorrect] = useState(false)
   const [answerIsSubmitted, setAnswerIsSubmitted] = useState(false)
@@ -104,19 +104,20 @@ const SelectedArtworks = () => {
         body: JSON.stringify({ artworkId, userId })
       };
       fetch(ANSWER_URL(currentCity), options)
-      .then(res => res.json())
-      .then(data =>{
-        if (data.success === true) {
-          console.log(data)
-        } else {
-          console.log("Det gick åt skogen")
-        }
-      } )
+        .then(res => res.json())
+        .then(data => {
+          if (data.success === true) {
+            console.log(data)
+          } else {
+            console.log("Det gick åt skogen")
+          }
+        })
       console.log(artworkId)
       console.log(userId)
-    } else { 
+    } else {
       console.log("Fel Svar!")
-      setAnswerIsCorrect(false)}
+      setAnswerIsCorrect(false)
+    }
   }
 
   const onNewAnswerChange = (event) => {
@@ -135,33 +136,33 @@ const SelectedArtworks = () => {
             <Text>Av {selectedArtwork.artist}, {selectedArtwork.year}</Text>
           </ArtistContainer>
           <Info>
-          {selectedArtwork.description}
+            {selectedArtwork.description}
           </Info>
           <TextClue><Span>Ledtråd:</Span> {selectedArtwork.clue}</TextClue>
-          <form 
-          onSubmit={onFormSubmit}
+          <form
+            onSubmit={onFormSubmit}
           >
             <label>
               {" "}
               Bokstav:
               {" "}
-              <Input 
-              type="text"
-              value={newAnswer}
-              onChange={onNewAnswerChange}
-              maxLength = "1"
+              <Input
+                type="text"
+                value={newAnswer}
+                onChange={onNewAnswerChange}
+                maxLength="1"
               />
             </label>
             <SubmitButton />
           </form>
 
-          {answerIsCorrect && 
-          <p>Rätt svar! Nu kan du ta nästa konstverk.</p>}
+          {answerIsCorrect &&
+            <p>Rätt svar! Nu kan du ta nästa konstverk.</p>}
           {!answerIsCorrect && answerIsSubmitted &&
-          <p>Fel! Försök igen!</p>}
-      </InnerContainer>
+            <p>Fel! Försök igen!</p>}
+        </InnerContainer>
       </Container>
     )
   );
 };
-export default SelectedArtworks;
+export default SelectedArtwork;

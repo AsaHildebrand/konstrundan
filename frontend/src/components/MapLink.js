@@ -38,7 +38,7 @@ const Title = styled.p`
 
 const MapLink = () => {
 
-  const iconSrc=(
+  const iconSrc = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="20"
@@ -56,10 +56,10 @@ const MapLink = () => {
 
   return (
     <Container>
-      <NavLink exact to="/" activeStyle={{ color: "#8D4807" }}>
+      <NavLink exact to="/map" activeStyle={{ color: "#8D4807" }}>
         <InnerContainer>
-        {iconSrc}
-        <Title>Karta</Title>
+          {iconSrc}
+          <Title>Karta</Title>
         </InnerContainer>
       </NavLink>
     </Container>
