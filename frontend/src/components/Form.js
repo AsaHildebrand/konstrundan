@@ -2,41 +2,52 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch, batch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-import styled from 'styled-components'
+import styled from "styled-components/macro"
 
 import user from '../reducers/user'
 
 import { USER_URL } from '../reusable/urls'
 
 const Container = styled.div`
-  display: grid;
   justify-content: center;
-  grid-template-columns: 1fr 1fr;
   font-size: 30px;
-  margin: 20px;
-  color: #f1dbb3
+  padding: 40px;
+  color: #f1dbb3;
+`
 
+const InnerContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 35px 40px 35px 40px 70px 60px;
+  row-gap: 10px; 
+  
+`
+
+const Label = styled.label`
+  margin: 0;
 `
 
 const Button = styled.button`
-background-color: #f1dbb3; 
-border: 1px solid #4B3D2D;
-color: #4B3D2D;
-padding: 5px 5px;
-text-align: center;
-background-color: #f1dbb3; 
-border: 1px solid #4B3D2D;
-color: #4B3D2D;
-font-size: 14px;
-font-weight: 700;
-margin:5px;
+  background-color: #f1dbb3; 
+  border: 1px solid #4B3D2D;
+  color: #4B3D2D;
+  padding: 5px 5px;
+  text-align: center;
+  background-color: #f1dbb3; 
+  border: 1px solid #4B3D2D;
+  color: #4B3D2D;
+  font-size: 14px;
+  font-weight: 700;
+  width: 100px;
+  height: 40px;
+  align-self: flex-end;
 `
 
 const Input = styled.input`
   font-size: 14px;
   background-color: #f1dbb3;
-  margin: 10px;
   padding: 4px;
+  width: 150px;
 `
 
 const StyledLink = styled(Link)`
@@ -98,27 +109,29 @@ const Form = ({ username, setUsername, password, setPassword, mode, title, link,
   return (
     <Container>
       <form className="registration-form" onSubmit={onFormSubmit}>
-        <label htmlFor="username">
-          Användarnamn:
-        </label>
-        <Input
-          type="text"
-          id="username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <label htmlFor="password">
-          Lösenord:
-        </label>
-        <Input
-          type="password"
-          id="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        {errors && <p>{errors.message}</p>}
-        <Button type="submit" >{title}</Button>
-        <StyledLink to={link}>{linkDescription}</StyledLink>
+        <InnerContainer>
+          <Label htmlFor="username">
+            Användarnamn:
+          </Label>  
+          <Input
+            type="text"
+            id="username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <Label htmlFor="password">
+            Lösenord:
+          </Label>
+          <Input
+            type="password"
+            id="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          {errors && <p>{errors.message}</p>}
+          <Button type="submit" >{title}</Button>
+          <StyledLink to={link}>{linkDescription}</StyledLink>
+        </InnerContainer>
       </form>
     </Container>
   )

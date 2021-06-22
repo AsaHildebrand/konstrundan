@@ -59,20 +59,20 @@ const MapContainer = () => {
   console.log(locations);
 
 
-  const checkResolved = (locations) => {
-    newLocations = [...locations]
-    const idsResolvedUppsala = resolvedUppsala.map((item) =>
-      item.artwork._id)
-    const idsResolvedKarlstad = resolvedKarlstad.map((item) =>
-      item.artwork._id)
-    for (let item of newLocations)
-      if ((idsResolvedUppsala.includes(item._id)) || (idsResolvedKarlstad.includes(item._id))) {
-        const newObject = { isResolved: true };
-        newLocations.push(newObject)
-        console.log(newLocations)
-      }
-  }
-  checkResolved();
+  // const checkResolved = (locations) => {
+  //   newLocations = [...locations]
+  //   const idsResolvedUppsala = resolvedUppsala.map((item) =>
+  //     item.artwork._id)
+  //   const idsResolvedKarlstad = resolvedKarlstad.map((item) =>
+  //     item.artwork._id)
+  //   for (let item of newLocations)
+  //     if ((idsResolvedUppsala.includes(item._id)) || (idsResolvedKarlstad.includes(item._id))) {
+  //       const newObject = { isResolved: true };
+  //       newLocations.push(newObject)
+  //       console.log(newLocations)
+  //     }
+  // }
+  // checkResolved();
 
 
   const markerColor = "brown"
