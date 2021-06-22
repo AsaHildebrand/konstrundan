@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from "styled-components/macro"
 
-const Container = styled.nav`
+const Container = styled.div`
   width: 100%;
   position: fixed;
   justify-items: center;
@@ -9,13 +9,13 @@ const Container = styled.nav`
   background-color: #f1dbb3;
   box-sizing: border-box;
   font-family: 'Viaoda Libre', cursive;
-  font-size: 30px;
   padding-left: 10px;
   margin:0;
 `
 
 const MainHeader = styled.h1`
   margin: 0;
+  font-size: 45px;
 `
 
 const Header = () => {
