@@ -108,6 +108,11 @@ const ProfilePage = () => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+  
+  
+  // const sortId = resolvedKarlstad.artwork.id
+  // resolvedKarlstad.sort((a, b) => (a.sortId > b.sortId) ? 1 : -1)
+  console.log(resolvedKarlstad)
 
   return (
     <Container>
