@@ -96,6 +96,10 @@ const artWorkSchema = new mongoose.Schema({
   correctAnswer: {
     type: String,
     required: true
+  },
+  description: {
+    type: String,
+    required: true
   }
 })
 
