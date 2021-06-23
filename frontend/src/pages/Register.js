@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styled from 'styled-components'
+import styled from "styled-components/macro"
 
 import Form from '../components/Form'
 
@@ -26,7 +26,7 @@ const Register = () => {
         password={password}
         setPassword={setPassword}
         mode="users"
-        title="Register"
+        title="Registrera"
         link="/"
         linkDescription="Har du redan ett användarkonto? Logga in här!"
       />

@@ -7,6 +7,7 @@ import BackButton from "../components/BackButton";
 import SubmitButton from "../components/SubmitButton";
 
 import { ARTWORK_URL, ANSWER_URL } from "../reusable/urls";
+
 import artwork from "../reducers/artwork";
 
 const Container = styled.div`
@@ -41,15 +42,19 @@ const Text = styled.p`
   font-weight: 700;
   margin: 0;
 `;
+
 const TextClue = styled.p`
- font-style: italic; 
+  font-style: italic; 
 `;
+
 const Info = styled.p`
   
 `;
+
 const Header = styled.h2`
   font-weight: 700px;
 `;
+
 const Input = styled.input`
   width: 40px;
   height: 20px;
@@ -155,7 +160,6 @@ const SelectedArtwork = () => {
             </label>
             <SubmitButton />
           </form>
-
           {answerIsCorrect &&
             <p>Rätt svar! Nu kan du ta nästa konstverk.</p>}
           {!answerIsCorrect && answerIsSubmitted &&
