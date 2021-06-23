@@ -5,7 +5,6 @@ import styled from "styled-components/macro";
 
 import BackButton from "../components/BackButton";
 import SubmitButton from "../components/SubmitButton";
-
 import { ARTWORK_URL, ANSWER_URL } from "../reusable/urls";
 
 import artwork from "../reducers/artwork";
@@ -105,7 +104,6 @@ const SelectedArtwork = () => {
           Authorization: accessToken,
           'Content-Type': 'application/json'
         },
-        //We haven't prepared the endpoint cause we don't know what the schema should look like =(, so we don't know what to send
         body: JSON.stringify({ artworkId, userId })
       };
       fetch(ANSWER_URL(currentCity), options)

@@ -29,7 +29,7 @@ const ResolvedOuterContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding: 20px;
-  overflow: scroll;
+  overflow: auto;
   height: 80%;
   margin: 100px 20px;
 
@@ -108,7 +108,6 @@ const ProfilePage = () => {
 
   useEffect(() => {
     if (userId) {
-      console.log(userId)
       const currentCity2 = "Uppsala"
       fetch(RESOLVED_URL(currentCity2, userId))
         .then((res) => res.json())
