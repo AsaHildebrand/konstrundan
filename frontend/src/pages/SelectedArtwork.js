@@ -125,8 +125,6 @@ const SelectedArtwork = ({ onFormSubmit, newAnswer, answerIsCorrect, answerIsSub
   //   setNewAnswer(event.target.value)
   // }
 
-  console.log(newAnswer)
-
   return (
     selectedArtwork && (
       <Container>

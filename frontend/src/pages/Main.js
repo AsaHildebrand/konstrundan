@@ -52,7 +52,6 @@ const Main = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  console.log(locations);
 
   const checkResolved = (locationsArray) => {
     const newLocations = [...locationsArray]
@@ -69,7 +68,7 @@ const Main = () => {
   }
   //checkResolved(locations);
 
-  console.log(locations)
+
 
   const onFormSubmit = (event) => {
     event.preventDefault();
@@ -87,7 +86,6 @@ const Main = () => {
       fetch(ANSWER_URL(currentCity), options)
         .then(res => res.json())
         .then(data => {
-          checkResolved(locations)
           if (data.success === true) {
             checkResolved(locations)
             console.log(data)
@@ -102,6 +100,8 @@ const Main = () => {
       setAnswerIsCorrect(false)
     }
   }
+
+
 
 
 
