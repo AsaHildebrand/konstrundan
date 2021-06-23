@@ -104,16 +104,22 @@ const SelectedArtwork = () => {
           Authorization: accessToken,
           'Content-Type': 'application/json'
         },
+
         body: JSON.stringify({ artworkId, userId })
       };
       fetch(ANSWER_URL(currentCity), options)
         .then(res => res.json())
         .then(data => {
           if (data.success === true) {
+            console.log(data)
           } else {
+            console.log("Det gick åt skogen")
           }
         })
+      console.log(artworkId)
+      console.log(userId)
     } else {
+      console.log("Fel Svar!")
       setAnswerIsCorrect(false)
     }
   }
@@ -121,6 +127,8 @@ const SelectedArtwork = () => {
   const onNewAnswerChange = (event) => {
     setNewAnswer(event.target.value)
   }
+
+  console.log(newAnswer)
 
   return (
     selectedArtwork && (
