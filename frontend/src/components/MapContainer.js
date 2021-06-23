@@ -18,7 +18,7 @@ const Container = styled.div`
   margin: 0;
 
   @media (min-width: 1024px) {
-    
+    justify-content: flex-start;
   }
 `;
 
@@ -26,6 +26,10 @@ const InnerContainer = styled.div`
   height: 60%;
   width: 90%;
   margin: 100px 0 0;
+
+  @media (min-width: 1024px) {
+    height: 75%;
+  }
 `
 
 const MapContainer = () => {
