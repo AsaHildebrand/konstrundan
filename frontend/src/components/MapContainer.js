@@ -38,7 +38,6 @@ const MapContainer = () => {
   const accessToken = useSelector(store => store.user.accessToken)
   // const resolvedKarlstad = useSelector((store) => store.user.resolvedKarlstad)
   // const resolvedUppsala = useSelector((store) => store.user.resolvedUppsala)
-  console.log(currentCity);
 
   const dispatch = useDispatch();
   const history = useHistory();
