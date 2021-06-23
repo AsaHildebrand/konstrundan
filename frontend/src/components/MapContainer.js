@@ -4,8 +4,9 @@ import { useHistory } from "react-router-dom";
 import styled from "styled-components/macro";
 import { Map, Marker } from "pigeon-maps";
 
-import artwork from "../reducers/artwork";
 import { MAP_URL } from "../reusable/urls";
+
+import artwork from "../reducers/artwork";
 
 const Container = styled.div`
   width: 100vw;
@@ -22,10 +23,9 @@ const Container = styled.div`
 `;
 
 const InnerContainer = styled.div`
-    height: 75%;
-    width: 90%;
+  height: 60%;
+  width: 90%;
 `
-//Don'd add padding to this container - destroys centering and navbar position
 
 const MapContainer = () => {
   const [locations, setLocations] = useState([]);

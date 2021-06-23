@@ -148,9 +148,7 @@ const ProfilePage = () => {
             <List>
             {sortedKarlstad.map((item) => {
               return (
-                <>
-                  <Text>{item.artwork.id}.{" "}{item.artwork.title}</Text>
-                </>
+              <Text key={item.artwork.title}>{item.artwork.id}.{" "}{item.artwork.title}</Text>
               )
             })}
             </List>
@@ -159,10 +157,8 @@ const ProfilePage = () => {
             <h3>Uppsala</h3>
             <List>
             {sortedUppsala.map((item) => {
-              return (
-                <>
-                  <Text>{item.artwork.id}.{" "}{item.artwork.title}</Text>
-                </>
+              return ( 
+              <Text key={item.artwork.title}>{item.artwork.id}.{" "}{item.artwork.title}</Text>  
               )
             })}
             </List>

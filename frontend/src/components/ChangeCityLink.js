@@ -25,11 +25,12 @@ const Container = styled.div`
 `;
 
 const InnerContainer = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `
+
 const Title = styled.p`
   font-size: 14px;
   margin: 0;
@@ -37,7 +38,6 @@ const Title = styled.p`
 `;
 
 const ChangeCityLink = () => {
-
   const iconSrc = (
     <svg
       xmlns="http://www.w3.org/2000/svg"

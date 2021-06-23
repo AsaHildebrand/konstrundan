@@ -4,9 +4,9 @@ import { useHistory } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import styled from "styled-components/macro"
 
-import user from '../reducers/user'
-
 import { USER_URL } from '../reusable/urls'
+
+import user from '../reducers/user'
 
 const Container = styled.div`
   justify-content: center;
@@ -20,7 +20,6 @@ const InnerContainer = styled.div`
   grid-template-columns: 1fr;
   grid-template-rows: 35px 40px 35px 40px 70px 60px;
   row-gap: 10px; 
-  
 `
 
 const Label = styled.label`
@@ -56,7 +55,6 @@ const StyledLink = styled(Link)`
   font-size: 16px;
 `
 
-
 const Form = ({ username, setUsername, password, setPassword, mode, title, link, linkDescription }) => {
 
   const accessToken = useSelector(store => store.user.accessToken)
@@ -86,12 +84,10 @@ const Form = ({ username, setUsername, password, setPassword, mode, title, link,
       .then(data => {
         if (data.success === true) {
           batch(() => {
-            //username is not saved to store
             dispatch(user.actions.setUsername(data.username))
             dispatch(user.actions.setUserId(data.userId))
             dispatch(user.actions.setAccessToken(data.accessToken))
             dispatch(user.actions.setErrors(null))
-            console.log(data.userId)
           })
           localStorage.setItem("user", JSON.stringify({
             username: data.username,
@@ -100,7 +96,6 @@ const Form = ({ username, setUsername, password, setPassword, mode, title, link,
           }))
         } else {
           dispatch(user.actions.setErrors(data))
-          console.log("error")
         }
       })
       .catch()

@@ -28,10 +28,10 @@ const Container = styled.div`
 `;
 
 const InnerContainer = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `
 const Title = styled.p`
   font-size: 14px;
