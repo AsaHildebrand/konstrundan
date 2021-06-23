@@ -3,14 +3,13 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 
-import MapContainer from './components/MapContainer'
-import SelectedArtwork from './pages/SelectedArtwork'
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Header from "./components/Header";
 import ProfilePage from "./pages/ProfilePage";
 import Cities from "./pages/Cities";
 import NavBar from "./components/NavBar";
+import Main from "./pages/Main";
 
 import user from "./reducers/user";
 import artwork from "./reducers/artwork";
@@ -24,6 +23,8 @@ const reducer = combineReducers({
 const store = configureStore({ reducer });
 
 export const App = () => {
+
+
   return (
     <div>
       <BrowserRouter>
@@ -34,9 +35,9 @@ export const App = () => {
             <Route path="/login" component={Login} />
             <Route path="/register" component={Register} />
             <Route exact path="/" component={Cities} />
+            <Route path="/map" component={Main} />
             <Route path="/min-sida" component={ProfilePage} />
-            <Route path="/map" component={MapContainer} />
-            <Route path="/artwork" component={SelectedArtwork} />
+            {/* <Route path="/artwork" render={(props) => <SelectedArtwork {...props} checkResolved={`checkResolved`} />} /> */}
           </Switch>
         </Provider>
       </BrowserRouter>

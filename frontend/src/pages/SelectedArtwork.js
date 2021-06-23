@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useHistory } from 'react-router-dom'
 import styled from "styled-components/macro";
@@ -6,7 +6,7 @@ import styled from "styled-components/macro";
 import BackButton from "../components/BackButton";
 import SubmitButton from "../components/SubmitButton";
 
-import { ARTWORK_URL, ANSWER_URL } from "../reusable/urls";
+import { ARTWORK_URL } from "../reusable/urls";
 import artwork from "../reducers/artwork";
 
 const Container = styled.div`
@@ -61,15 +61,12 @@ const Span = styled.span`
   font-weight: 700;
 `
 
-const SelectedArtwork = () => {
-  const [newAnswer, setNewAnswer] = useState('')
-  const [answerIsCorrect, setAnswerIsCorrect] = useState(false)
-  const [answerIsSubmitted, setAnswerIsSubmitted] = useState(false)
+const SelectedArtwork = ({ onNewAnswerChange, onFormSubmit, newAnswer, answerIsCorrect, answerIsSubmitted }) => {
+
   const artworkId = useSelector((store) => store.artwork.artworkId);
-  const selectedArtwork = useSelector((store) => store.artwork.selectedArtwork);
-  const userId = useSelector((store) => store.user.userId);
   const currentCity = useSelector((store) => store.city.currentCity.city);
   const accessToken = useSelector(store => store.user.accessToken)
+  const selectedArtwork = useSelector((store) => store.artwork.selectedArtwork);
 
   const dispatch = useDispatch();
   const history = useHistory()
@@ -89,40 +86,40 @@ const SelectedArtwork = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const onFormSubmit = (event) => {
-    event.preventDefault();
-    setAnswerIsSubmitted(true);
-    if (newAnswer.toLowerCase() === selectedArtwork.correctAnswer.toLowerCase()) {
-      setAnswerIsCorrect(true)
-      const options = {
-        method: 'POST',
-        headers: {
-          Authorization: accessToken,
-          'Content-Type': 'application/json'
-        },
-        //We haven't prepared the endpoint cause we don't know what the schema should look like =(, so we don't know what to send
-        body: JSON.stringify({ artworkId, userId })
-      };
-      fetch(ANSWER_URL(currentCity), options)
-        .then(res => res.json())
-        .then(data => {
-          if (data.success === true) {
-            console.log(data)
-          } else {
-            console.log("Det gick åt skogen")
-          }
-        })
-      console.log(artworkId)
-      console.log(userId)
-    } else {
-      console.log("Fel Svar!")
-      setAnswerIsCorrect(false)
-    }
-  }
+  // const onFormSubmit = (event) => {
+  //   event.preventDefault();
+  //   setAnswerIsSubmitted(true);
+  //   if (newAnswer.toLowerCase() === selectedArtwork.correctAnswer.toLowerCase()) {
+  //     setAnswerIsCorrect(true)
+  //     const options = {
+  //       method: 'POST',
+  //       headers: {
+  //         Authorization: accessToken,
+  //         'Content-Type': 'application/json'
+  //       },
+  //       //We haven't prepared the endpoint cause we don't know what the schema should look like =(, so we don't know what to send
+  //       body: JSON.stringify({ artworkId, userId })
+  //     };
+  //     fetch(ANSWER_URL(currentCity), options)
+  //       .then(res => res.json())
+  //       .then(data => {
+  //         if (data.success === true) {
+  //           console.log(data)
+  //         } else {
+  //           console.log("Det gick åt skogen")
+  //         }
+  //       })
+  //     console.log(artworkId)
+  //     console.log(userId)
+  //   } else {
+  //     console.log("Fel Svar!")
+  //     setAnswerIsCorrect(false)
+  //   }
+  // }
 
-  const onNewAnswerChange = (event) => {
-    setNewAnswer(event.target.value)
-  }
+  // const onNewAnswerChange = (event) => {
+  //   setNewAnswer(event.target.value)
+  // }
 
   console.log(newAnswer)
 
@@ -148,7 +145,7 @@ const SelectedArtwork = () => {
               {" "}
               <Input
                 type="text"
-                value={newAnswer}
+                // value={newAnswer}
                 onChange={onNewAnswerChange}
                 maxLength="1"
               />

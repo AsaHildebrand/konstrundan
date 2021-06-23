@@ -27,12 +27,9 @@ const InnerContainer = styled.div`
 `
 //Don'd add padding to this container - destroys centering and navbar position
 
-const MapContainer = () => {
-  const [locations, setLocations] = useState([]);
+const MapContainer = ({ locations, setLocations }) => {
   const currentCity = useSelector((store) => store.city.currentCity);
   const accessToken = useSelector(store => store.user.accessToken)
-  const resolvedKarlstad = useSelector((store) => store.user.resolvedKarlstad)
-  const resolvedUppsala = useSelector((store) => store.user.resolvedUppsala)
   console.log(currentCity);
 
   const dispatch = useDispatch();
@@ -92,7 +89,6 @@ const MapContainer = () => {
                   color={markerColor}
                   onClick={() => {
                     dispatch(artwork.actions.setArtworkId(item._id))
-                    history.push("/artwork")
                   }
                   }
                 />

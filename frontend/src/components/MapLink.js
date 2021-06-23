@@ -56,7 +56,7 @@ const MapLink = () => {
 
   return (
     <Container>
-      <NavLink exact to="/map" activeStyle={{ color: "#8D4807" }}>
+      <NavLink to="/map" activeStyle={{ color: "#8D4807" }}>
         <InnerContainer>
           {iconSrc}
           <Title>Karta</Title>
