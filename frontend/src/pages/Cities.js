@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 import city from "../reducers/city";
 
@@ -18,17 +18,17 @@ const Container = styled.div`
 `;
 
 const Button = styled.button`
-background-color: #f1dbb3; 
-border: 1px solid #4B3D2D;
-color: #4B3D2D;
-padding: 8px;
-text-align: center;
-text-decoration: none;
-display: inline-block;
-font-size: 30px;
-font-weight: 700;
-margin:0 0 20px 20px;
-align-self: flex-start;
+  background-color: #f1dbb3; 
+  border: 1px solid #4B3D2D;
+  color: #4B3D2D;
+  padding: 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+  font-weight: 700;
+  margin:0 0 20px 20px;
+  align-self: flex-start;
 `
 
 const Cities = () => {

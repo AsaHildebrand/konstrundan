@@ -76,9 +76,7 @@ const MapContainer = () => {
   // }
   // checkResolved();
 
-
   const markerColor = "brown"
-
 
   return (
     currentCity && (

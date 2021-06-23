@@ -67,16 +67,13 @@ const Header = styled.h2`
 `
 
 const List = styled.ul`
-padding: 0;
+  padding: 0;
 `
 
 const Text = styled.li`
-font-size: 16px;
-margin: 5px 0;
-list-style-type: none;
-@media (min-width: 1024px) {
-
-} 
+  font-size: 16px;
+  margin: 5px 0;
+  list-style-type: none;
 `
 
 const ProfilePage = () => {

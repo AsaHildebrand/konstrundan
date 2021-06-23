@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styled from 'styled-components'
+import styled from "styled-components/macro"
 import Form from '../components/Form'
 
 const Container = styled.div`

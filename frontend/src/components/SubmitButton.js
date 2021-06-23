@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from "styled-components/macro"
 
-
 const Button = styled.button`
 background-color: #4B3D2D; 
 border: 1px solid #4B3D2D;
@@ -15,6 +14,7 @@ font-weight: 700;
 margin:0 0 20px 20px;
 align-self: flex-start;
 `
+
 const SubmitButton = ({setAnswerIsSubmitted}) => {
 
   return (
