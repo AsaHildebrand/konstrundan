@@ -13,7 +13,7 @@ const Container = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   margin: 0;
 
@@ -25,6 +25,7 @@ const Container = styled.div`
 const InnerContainer = styled.div`
   height: 60%;
   width: 90%;
+  margin: 100px 0 0;
 `
 
 const MapContainer = () => {
