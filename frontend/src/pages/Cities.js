@@ -58,7 +58,6 @@ const Cities = () => {
   return (
     <Container>
       <p>Välj stad!</p>
-
       {cities.map((singleCity) => (
         <Link to="/map" key={singleCity.city}>
           <Button

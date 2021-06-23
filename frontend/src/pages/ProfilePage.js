@@ -45,10 +45,6 @@ const ResolvedInnerContainer = styled.div`
   justify-content: center;
   align-items: flex-start;
   height: 100%;
-
-  @media (min-width: 1024px) {
-   
-  }
 `
 
 const ListContainer = styled.div`
@@ -100,7 +96,6 @@ const ProfilePage = () => {
 
   useEffect(() => {
     if (userId) {
-      console.log(userId)
       const currentCity1 = "Karlstad"
       fetch(RESOLVED_URL(currentCity1, userId))
         .then((res) => res.json())
@@ -108,7 +103,6 @@ const ProfilePage = () => {
           if (data.success === true) {
             dispatch(user.actions.setResolvedKarlstad(data.resolvedArtWorksByUser))
           } else {
-            console.log("Den gubben gick inte!")
           }
         })
     }
@@ -125,7 +119,6 @@ const ProfilePage = () => {
           if (data.success === true) {
             dispatch(user.actions.setResolvedUppsala(data.resolvedArtWorksByUser))
           } else {
-            console.log("Den gubben gick inte!")
           }
         })
     }
@@ -133,10 +126,8 @@ const ProfilePage = () => {
   }, [])
 
   const sortedKarlstad = resolvedKarlstad.slice().sort((a, b) => (a.artwork.id > b.artwork.id) ? 1 : -1)
-  console.log(sortedKarlstad)
 
   const sortedUppsala = resolvedUppsala.slice().sort((a, b) => (a.artwork.id > b.artwork.id) ? 1 : -1)
-  console.log(sortedUppsala)
 
   return (
     <Container>
