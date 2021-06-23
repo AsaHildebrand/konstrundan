@@ -61,7 +61,7 @@ const Span = styled.span`
   font-weight: 700;
 `
 
-const SelectedArtwork = ({ onNewAnswerChange, onFormSubmit, newAnswer, answerIsCorrect, answerIsSubmitted }) => {
+const SelectedArtwork = ({ onFormSubmit, newAnswer, answerIsCorrect, answerIsSubmitted }) => {
 
   const artworkId = useSelector((store) => store.artwork.artworkId);
   const currentCity = useSelector((store) => store.city.currentCity.city);
@@ -85,6 +85,10 @@ const SelectedArtwork = ({ onNewAnswerChange, onFormSubmit, newAnswer, answerIsC
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  const onNewAnswerChange = (event) => {
+    dispatch(artwork.actions.setNewAnswer(event.target.value))
+  }
 
   // const onFormSubmit = (event) => {
   //   event.preventDefault();

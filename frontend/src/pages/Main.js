@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { BrowserRouter, Switch, Route, useHistory } from 'react-router-dom'
 import styled from 'styled-components/macro'
 
 import MapContainer from '../components/MapContainer'
 import SelectedArtwork from './SelectedArtwork'
 import { MAP_URL, ANSWER_URL } from "../reusable/urls";
+
+import artwork from '../reducers/artwork'
 
 const Container = styled.div`
   width: 100%;
@@ -14,7 +16,6 @@ const Container = styled.div`
   `
 
 const Main = () => {
-  const [newAnswer, setNewAnswer] = useState('')
   const [answerIsCorrect, setAnswerIsCorrect] = useState(false)
   const [answerIsSubmitted, setAnswerIsSubmitted] = useState(false)
   const [locations, setLocations] = useState([]);
@@ -24,10 +25,12 @@ const Main = () => {
   const userId = useSelector((store) => store.user.userId);
   const accessToken = useSelector((store) => store.user.accessToken)
   const selectedArtwork = useSelector((store) => store.artwork.selectedArtwork);
+  const newAnswer = useSelector((store) => store.artwork.newAnswer);
   const currentCity = useSelector((store) => store.city.currentCity.city);
   console.log(currentCity)
 
   const history = useHistory()
+  const dispatch = useDispatch()
 
   useEffect(() => {
     if (!accessToken) {
@@ -62,10 +65,11 @@ const Main = () => {
         item.isResolved = true;
       }
     }
-    console.log(newLocations)
     setLocations(newLocations)
   }
   //checkResolved(locations);
+
+  console.log(locations)
 
   const onFormSubmit = (event) => {
     event.preventDefault();
@@ -85,6 +89,7 @@ const Main = () => {
         .then(data => {
           checkResolved(locations)
           if (data.success === true) {
+            checkResolved(locations)
             console.log(data)
           } else {
             console.log("Det gick åt skogen")
@@ -98,9 +103,9 @@ const Main = () => {
     }
   }
 
-  const onNewAnswerChange = (event) => {
-    setNewAnswer(event.target.value)
-  }
+
+
+  //onClick={() => dispatch(city.actions.setCurrentCity(singleCity))}>
 
 
 
@@ -110,7 +115,7 @@ const Main = () => {
       <Container>
         <Switch>
           <Route path="/map">
-            {artworkId && <SelectedArtwork onNewanswerChange={onNewAnswerChange} onFormSubmit={onFormSubmit} newAnswer={newAnswer} answerIsCorrect={answerIsCorrect} answerIsSubmitted={answerIsSubmitted} />}
+            {artworkId && <SelectedArtwork onFormSubmit={onFormSubmit} answerIsCorrect={answerIsCorrect} answerIsSubmitted={answerIsSubmitted} />}
             {!artworkId && <MapContainer checkResolved={checkResolved} locations={locations} setLocations={setLocations} />}
           </Route>
         </Switch>

@@ -5,6 +5,7 @@ const artwork = createSlice({
   initialState: {
     selectedArtwork: null,
     artworkId: null,
+    newAnswer: null
   },
   reducers: {
     setArtworkId: (store, action) => {
@@ -12,6 +13,9 @@ const artwork = createSlice({
     },
     setSelectedArtwork: (store, action) => {
       store.selectedArtwork = action.payload
+    },
+    setNewAnswer: (store, action) => {
+      store.newAnswer = action.payload
     }
   }
 })
