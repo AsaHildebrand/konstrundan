@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
-import { Link, useHistory } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import styled from "styled-components/macro";
+import React, { useEffect } from "react"
+import { Link, useHistory } from "react-router-dom"
+import { useDispatch, useSelector } from "react-redux"
+import styled from "styled-components/macro"
 
-import city from "../reducers/city";
+import city from "../reducers/city"
 
 const Container = styled.div`
   height: 100vh;
@@ -15,7 +15,7 @@ const Container = styled.div`
   font-family: 'Lora', serif;
   font-style: italic;
   font-size: 40px;
-`;
+`
 
 const Button = styled.button`
   background-color: #f1dbb3; 
@@ -32,8 +32,8 @@ const Button = styled.button`
 `
 
 const Cities = () => {
-  const dispatch = useDispatch();
-  const history = useHistory();
+  const dispatch = useDispatch()
+  const history = useHistory()
   const accessToken = useSelector((store) => store.user.accessToken)
 
   const cities = [
@@ -47,7 +47,7 @@ const Cities = () => {
       center: [59.858562, 17.638928],
       zoom: 11
     },
-  ];
+  ]
 
   useEffect(() => {
     if (!accessToken) {
@@ -67,6 +67,6 @@ const Cities = () => {
         </Link>
       ))}
     </Container>
-  );
-};
-export default Cities;
+  )
+}
+export default Cities

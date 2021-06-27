@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom"
 import styled from "styled-components/macro"
 
 import artwork from '../reducers/artwork'
@@ -24,7 +24,7 @@ const Button = styled.button`
 `
 const BackButton = () => {
   const dispatch = useDispatch()
-  const history = useHistory();
+  const history = useHistory()
 
   return (
     <Button

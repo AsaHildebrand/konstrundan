@@ -1,11 +1,11 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import styled from "styled-components/macro";
+import React from "react"
+import { useSelector } from "react-redux"
+import styled from "styled-components/macro"
 
-import MapLink from "./MapLink";
-import ChangeCityLink from "./ChangeCityLink";
-import ProfilepageLink from "./ProfilepageLink";
-import LogoutLink from "./LogoutLink";
+import MapLink from "./MapLink"
+import ChangeCityLink from "./ChangeCityLink"
+import ProfilepageLink from "./ProfilepageLink"
+import LogoutLink from "./LogoutLink"
 
 const Container = styled.nav`
   width: 100%;
@@ -18,7 +18,7 @@ const Container = styled.nav`
   padding: 10px;
   box-sizing: border-box;
   color: white; 
-`;
+`
 
 const NavBar = () => {
   const accessToken = useSelector((store) => store.user.accessToken)
@@ -31,6 +31,6 @@ const NavBar = () => {
       <ProfilepageLink/>
       <LogoutLink/>
     </Container>
-  );
-};
-export default NavBar;
+  )
+}
+export default NavBar

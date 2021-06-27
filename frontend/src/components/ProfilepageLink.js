@@ -1,6 +1,6 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import styled from "styled-components/macro";
+import React from "react"
+import { NavLink } from "react-router-dom"
+import styled from "styled-components/macro"
 
 const Container = styled.div`
   display: flex;
@@ -22,7 +22,7 @@ const Container = styled.div`
   a:active {
     color: white;
   }
-`;
+`
 
 const InnerContainer = styled.div`
   display: flex;
@@ -34,7 +34,7 @@ const Title = styled.p`
   font-size: 14px;
   margin: 0;
   white-space: nowrap;
-`;
+`
 
 const ProfilepageLink = () => {
 
@@ -60,6 +60,6 @@ const ProfilepageLink = () => {
         </InnerContainer>
       </NavLink>
     </Container>
-  );
-};
-export default ProfilepageLink;
+  )
+}
+export default ProfilepageLink

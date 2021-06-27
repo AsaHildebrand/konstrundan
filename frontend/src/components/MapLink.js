@@ -1,6 +1,6 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import styled from "styled-components/macro";
+import React from "react"
+import { NavLink } from "react-router-dom"
+import styled from "styled-components/macro"
 
 const Container = styled.div`
   display: flex;
@@ -63,6 +63,6 @@ const MapLink = () => {
         </InnerContainer>
       </NavLink>
     </Container>
-  );
-};
-export default MapLink;
+  )
+}
+export default MapLink

@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useHistory } from "react-router-dom";
-import styled from "styled-components/macro";
-import { Map, Marker } from "pigeon-maps";
+import React, { useState, useEffect } from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { useHistory } from "react-router-dom"
+import styled from "styled-components/macro"
+import { Map, Marker } from "pigeon-maps"
 
-import { MAP_URL } from "../reusable/urls";
+import { MAP_URL } from "../reusable/urls"
 
-import artwork from "../reducers/artwork";
+import artwork from "../reducers/artwork"
 
 const Container = styled.div`
   width: 100vw;
@@ -20,7 +20,7 @@ const Container = styled.div`
   @media (min-width: 1024px) {
     justify-content: flex-start;
   }
-`;
+`
 
 const InnerContainer = styled.div`
   height: 60%;
@@ -33,32 +33,32 @@ const InnerContainer = styled.div`
 `
 
 const MapContainer = () => {
-  const [locations, setLocations] = useState([]);
-  const currentCity = useSelector((store) => store.city.currentCity);
+  const [locations, setLocations] = useState([])
+  const currentCity = useSelector((store) => store.city.currentCity)
   const accessToken = useSelector(store => store.user.accessToken)
   // const resolvedKarlstad = useSelector((store) => store.user.resolvedKarlstad)
   // const resolvedUppsala = useSelector((store) => store.user.resolvedUppsala)
 
-  const dispatch = useDispatch();
-  const history = useHistory();
+  const dispatch = useDispatch()
+  const history = useHistory()
 
   useEffect(() => {
     if (!accessToken) {
-      history.push("/login");
+      history.push("/login")
     }
   })
 
   useEffect(() => {
     if (!currentCity) {
-      history.push("/");
+      history.push("/")
     }
     if (currentCity) {
       fetch(MAP_URL(currentCity.city))
         .then((res) => res.json())
-        .then((json) => setLocations(json));
+        .then((json) => setLocations(json))
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [])
 
 
   // const checkResolved = (locations) => {
@@ -102,7 +102,7 @@ const MapContainer = () => {
         </InnerContainer>
       </Container>
     )
-  );
-};
+  )
+}
 
-export default MapContainer;
+export default MapContainer

@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import React, { useEffect, useState } from "react"
+import { useSelector, useDispatch } from "react-redux"
 import { useHistory } from 'react-router-dom'
-import styled from "styled-components/macro";
+import styled from "styled-components/macro"
 
-import BackButton from "../components/BackButton";
-import SubmitButton from "../components/SubmitButton";
-import { ARTWORK_URL, ANSWER_URL } from "../reusable/urls";
+import BackButton from "../components/BackButton"
+import SubmitButton from "../components/SubmitButton"
+import { ARTWORK_URL, ANSWER_URL } from "../reusable/urls"
 
-import artwork from "../reducers/artwork";
+import artwork from "../reducers/artwork"
 
 const Container = styled.div`
   width: 100vw;
@@ -19,7 +19,7 @@ const Container = styled.div`
   padding: 75px 0 0 0;
   margin: 0;
   font-family: 'Lora', serif;
-`;
+`
 
 const InnerContainer = styled.div`
   background-color: #f1dbb3;
@@ -35,31 +35,31 @@ const InnerContainer = styled.div`
 const ArtistContainer = styled.div`
   display: flex;
   flex-direction: row;
-`;
+`
 
 const Text = styled.p`
   font-weight: 700;
   margin: 0;
-`;
+`
 
 const TextClue = styled.p`
   font-style: italic; 
-`;
+`
 
 const Info = styled.p`
   
-`;
+`
 
 const Header = styled.h2`
   font-weight: 700px;
-`;
+`
 
 const Input = styled.input`
   width: 40px;
   height: 20px;
   background-color: #f1dbb3;
   border: 1px solid #4b3d2d
-`;
+`
 
 const Span = styled.span`
   font-weight: 700;
@@ -69,18 +69,18 @@ const SelectedArtwork = () => {
   const [newAnswer, setNewAnswer] = useState('')
   const [answerIsCorrect, setAnswerIsCorrect] = useState(false)
   const [answerIsSubmitted, setAnswerIsSubmitted] = useState(false)
-  const artworkId = useSelector((store) => store.artwork.artworkId);
-  const selectedArtwork = useSelector((store) => store.artwork.selectedArtwork);
-  const userId = useSelector((store) => store.user.userId);
-  const currentCity = useSelector((store) => store.city.currentCity.city);
+  const artworkId = useSelector((store) => store.artwork.artworkId)
+  const selectedArtwork = useSelector((store) => store.artwork.selectedArtwork)
+  const userId = useSelector((store) => store.user.userId)
+  const currentCity = useSelector((store) => store.city.currentCity.city)
   const accessToken = useSelector(store => store.user.accessToken)
 
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
   const history = useHistory()
 
   useEffect(() => {
     if (!accessToken) {
-      history.push("/login");
+      history.push("/login")
     }
   })
 
@@ -88,14 +88,14 @@ const SelectedArtwork = () => {
     fetch(ARTWORK_URL(currentCity, artworkId))
       .then((res) => res.json())
       .then((data) => {
-        dispatch(artwork.actions.setSelectedArtwork(data));
+        dispatch(artwork.actions.setSelectedArtwork(data))
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const onFormSubmit = (event) => {
-    event.preventDefault();
-    setAnswerIsSubmitted(true);
+    event.preventDefault()
+    setAnswerIsSubmitted(true)
     if (newAnswer.toLowerCase() === selectedArtwork.correctAnswer.toLowerCase()) {
       setAnswerIsCorrect(true)
       const options = {
@@ -158,6 +158,6 @@ const SelectedArtwork = () => {
         </InnerContainer>
       </Container>
     )
-  );
-};
-export default SelectedArtwork;
+  )
+}
+export default SelectedArtwork

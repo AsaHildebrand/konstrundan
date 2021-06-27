@@ -1,7 +1,7 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
-import { useDispatch, batch } from "react-redux";
-import styled from "styled-components/macro";
+import React from "react"
+import { NavLink } from "react-router-dom"
+import { useDispatch, batch } from "react-redux"
+import styled from "styled-components/macro"
 
 import user from "../reducers/user"
 
@@ -82,4 +82,4 @@ const LogoutLink = () => {
     </Container>
   );
 };
-export default LogoutLink;
+export default LogoutLink
