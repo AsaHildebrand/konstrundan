@@ -85,7 +85,15 @@ const SelectedArtwork = () => {
   })
 
   useEffect(() => {
-    fetch(ARTWORK_URL(currentCity, artworkId))
+    if (accessToken) {
+      const options = {
+        method: "GET",
+        headers: {
+          Authorization: accessToken
+        }
+      }
+    }
+    fetch(ARTWORK_URL(currentCity, artworkId), options)
       .then((res) => res.json())
       .then((data) => {
         dispatch(artwork.actions.setSelectedArtwork(data))

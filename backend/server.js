@@ -147,16 +147,17 @@ app.get('/', (req, res) => {
   res.send(listEndpoints(app))
 })
 
+app.get('/artworks/Karlstad', authenticateUser)
 app.get('/artworks/Karlstad', async (req, res) => {
   const artWorks = await ArtWorkKarlstad.find()
   res.json(artWorks)
 })
-
+app.get('/artworks/Uppsala', authenticateUser)
 app.get('/artworks/Uppsala', async (req, res) => {
   const artWorks = await ArtWorkUppsala.find()
   res.json(artWorks)
 })
-
+app.get('/artworks/Karlstad/:id', authenticateUser)
 app.get('/artworks/Karlstad/:id', async (req, res) => {
   const { id } = req.params
   const selectedArtwork = await ArtWorkKarlstad.findById(id)
@@ -166,7 +167,7 @@ app.get('/artworks/Karlstad/:id', async (req, res) => {
     res.status(404).json({ error: 'Konstverket du söker finns inte i databasen.' })
   }
 })
-
+app.get('/artworks/Uppsala/:id', authenticateUser)
 app.get('/artworks/Uppsala/:id', async (req, res) => {
   const { id } = req.params
   const selectedArtwork = await ArtWorkUppsala.findById(id)
@@ -176,7 +177,7 @@ app.get('/artworks/Uppsala/:id', async (req, res) => {
     res.status(404).json({ error: 'Konstverket du söker finns inte i databasen.' })
   }
 })
-
+app.get('/resolved-artworks/Karlstad/:id', authenticateUser)
 app.get('/resolved-artworks/Karlstad/:id', async (req, res) => {
   const { id } = req.params
   try {
@@ -186,7 +187,7 @@ app.get('/resolved-artworks/Karlstad/:id', async (req, res) => {
     res.status(400).json({ success: false, message: 'Kunde inte hitta användare', error: err })
   }
 })
-
+app.get('/resolved-artworks/Uppsala/:id', authenticateUser)
 app.get('/resolved-artworks/Uppsala/:id', async (req, res) => {
   const { id } = req.params
   try {
@@ -197,6 +198,7 @@ app.get('/resolved-artworks/Uppsala/:id', async (req, res) => {
   }
 })
 
+app.post('/resolved-artworks/Karlstad', authenticateUser)
 app.post('/resolved-artworks/Karlstad', async (req, res) => {
   const { artworkId, userId } = req.body
   try {
@@ -213,6 +215,7 @@ app.post('/resolved-artworks/Karlstad', async (req, res) => {
   }
 })
 
+app.post('/resolved-artworks/Uppsala', authenticateUser)
 app.post('/resolved-artworks/Uppsala', async (req, res) => {
   const { artworkId, userId } = req.body
   try {

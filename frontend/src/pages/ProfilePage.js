@@ -92,9 +92,15 @@ const ProfilePage = () => {
   })
 
   useEffect(() => {
-    if (userId) {
+    if (userId && accessToken) {
+      const options = {
+        method: "GET",
+        headers: {
+          Authorization: accessToken
+        }
+      }
       const currentCity1 = "Karlstad"
-      fetch(RESOLVED_URL(currentCity1, userId))
+      fetch(RESOLVED_URL(currentCity1, userId), options)
         .then((res) => res.json())
         .then((data) => {
           if (data.success === true) {
@@ -107,9 +113,15 @@ const ProfilePage = () => {
   }, [])
 
   useEffect(() => {
-    if (userId) {
+    if (userId && accessToken) {
+      const options = {
+        method: "GET",
+        headers: {
+          Authorization: accessToken
+        }
+      }
       const currentCity2 = "Uppsala"
-      fetch(RESOLVED_URL(currentCity2, userId))
+      fetch(RESOLVED_URL(currentCity2, userId), options)
         .then((res) => res.json())
         .then((data) => {
           if (data.success === true) {

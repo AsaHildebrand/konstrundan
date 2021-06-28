@@ -36,8 +36,6 @@ const MapContainer = () => {
   const [locations, setLocations] = useState([])
   const currentCity = useSelector((store) => store.city.currentCity)
   const accessToken = useSelector(store => store.user.accessToken)
-  // const resolvedKarlstad = useSelector((store) => store.user.resolvedKarlstad)
-  // const resolvedUppsala = useSelector((store) => store.user.resolvedUppsala)
 
   const dispatch = useDispatch()
   const history = useHistory()
@@ -52,29 +50,19 @@ const MapContainer = () => {
     if (!currentCity) {
       history.push("/")
     }
-    if (currentCity) {
-      fetch(MAP_URL(currentCity.city))
+    if (currentCity && accessToken) {
+      const options={
+        method: "GET",
+        headers: {
+          Authorization: accessToken
+        }
+      }
+      fetch(MAP_URL(currentCity.city), options)
         .then((res) => res.json())
         .then((json) => setLocations(json))
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
-
-
-  // const checkResolved = (locations) => {
-  //   newLocations = [...locations]
-  //   const idsResolvedUppsala = resolvedUppsala.map((item) =>
-  //     item.artwork._id)
-  //   const idsResolvedKarlstad = resolvedKarlstad.map((item) =>
-  //     item.artwork._id)
-  //   for (let item of newLocations)
-  //     if ((idsResolvedUppsala.includes(item._id)) || (idsResolvedKarlstad.includes(item._id))) {
-  //       const newObject = { isResolved: true };
-  //       newLocations.push(newObject)
-  //       console.log(newLocations)
-  //     }
-  // }
-  // checkResolved();
 
   const markerColor = "brown"
 
