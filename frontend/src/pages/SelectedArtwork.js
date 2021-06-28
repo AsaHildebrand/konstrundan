@@ -92,12 +92,11 @@ const SelectedArtwork = () => {
           Authorization: accessToken
         }
       }
-    }
     fetch(ARTWORK_URL(currentCity, artworkId), options)
       .then((res) => res.json())
       .then((data) => {
         dispatch(artwork.actions.setSelectedArtwork(data))
-      });
+      });}
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
