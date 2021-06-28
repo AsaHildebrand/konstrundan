@@ -114,10 +114,10 @@ const authenticateUser = async (req, res, next) => {
     if (user) {
       next()
     } else {
-      res.status(401).json({ success: false, message: 'Not authorized' })
+      res.status(401).json({ success: false, message: 'Du är ej inloggad i appen' })
     }
   } catch (error) {
-    res.status(400).json({ success: false, message: "Invalid request", error })
+    res.status(400).json({ success: false, message: "Ogiltig begäran", error })
   }
 }
 
@@ -154,7 +154,7 @@ app.get('/artworks/Karlstad', async (req, res) => {
     const artWorks = await ArtWorkKarlstad.find()
     res.json({ success: true, artWorks })
   } catch (error) {
-    res.status(400).json({ success: false, message: "Something went wrong", error })
+    res.status(400).json({ success: false, message: 'Något gick fel', error })
   }
 })
 
@@ -165,7 +165,7 @@ app.get('/artworks/Uppsala', async (req, res) => {
     const artWorks = await ArtWorkUppsala.find()
     res.json({ success: true, artWorks })
   } catch (error) {
-    res.status(400).json({ success: false, message: "Something went wrong", error })
+    res.status(400).json({ success: false, message: 'Något gick fel', error })
   }
 })
 
@@ -176,12 +176,12 @@ app.get('/artworks/Karlstad/:id', async (req, res) => {
   try {
     const selectedArtwork = await ArtWorkKarlstad.findById(id)
     if (selectedArtwork) {
-      res.json(selectedArtwork)
+      res.json({ success: true, selectedArtwork })
     } else {
-      res.status(404).json({ error: 'Konstverket du söker finns inte i databasen.' })
+      res.status(404).json({ success: false, message: 'Konstverket du söker finns inte i databasen' })
     }
   } catch (error) {
-    res.status(400).json({ success: false, message: "Something went wrong", error })
+    res.status(400).json({ success: false, message: 'Något gick fel', error })
   }
 })
 
@@ -192,12 +192,12 @@ app.get('/artworks/Uppsala/:id', async (req, res) => {
 try {
   const selectedArtwork = await ArtWorkUppsala.findById(id)
   if (selectedArtwork) {
-    res.json(selectedArtwork)
+    res.json({ success: true, selectedArtwork })
   } else {
-    res.status(404).json({ error: 'Konstverket du söker finns inte i databasen.' })
+    res.status(404).json({ success: false, message: 'Konstverket du söker finns inte i databasen' })
   }
 } catch (error) {
-  res.status(400).json({ success: false, message: "Something went wrong", error })
+  res.status(400).json({ success: false, message: 'Något gick fel', error })
 }
 })
 
@@ -274,7 +274,7 @@ app.post('/users', async (req, res) => {
       accessToken: newUser.accessToken
     })
   } catch (error) {
-    res.status(400).json({ success: false, message: "Invalid request", error })
+    res.status(400).json({ success: false, message: "Ogiltig begäran", error })
   }
 })
 
@@ -292,10 +292,10 @@ app.post('/sessions', async (req, res) => {
         accessToken: user.accessToken
       })
     } else {
-      res.status(404).json({ success: false, message: 'User not found' })
+      res.status(404).json({ success: false, message: 'Användaren ej funnen' })
     }
   } catch (error) {
-    res.status(404).json({ success: false, message: 'Invalid request', error: error })
+    res.status(404).json({ success: false, message: 'Ogiltig begäran', error })
   }
 })
 
