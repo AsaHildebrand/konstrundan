@@ -95,7 +95,12 @@ const SelectedArtwork = () => {
     fetch(ARTWORK_URL(currentCity, artworkId), options)
       .then((res) => res.json())
       .then((data) => {
-        dispatch(artwork.actions.setSelectedArtwork(data.selectedArtwork))
+        console.log(data)
+        if(data.success) {
+          dispatch(artwork.actions.setSelectedArtwork(data.selectedArtwork))
+        } else {
+          alert(data.selectedArtwork.message)
+        }
       });}
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -118,9 +123,9 @@ const SelectedArtwork = () => {
         .then(data => {
           console.log(data)
           if (data.success === true) {
-            alert(data.message)
+
           } else {
-            alert(data.message)
+            alert(data.selectedArtwork.message)
           }
         })
     } else {

@@ -59,11 +59,11 @@ const MapContainer = () => {
       }
       fetch(MAP_URL(currentCity.city), options)
         .then((res) => res.json())
-        .then((json) => {
-          if(json.success) {
-            setLocations(json.artWorks)
+        .then((data) => {
+          if(data.success) {
+            setLocations(data.artWorks)
           } else {
-            alert(json.message)
+            alert(data.message)
           }
       })
     }
