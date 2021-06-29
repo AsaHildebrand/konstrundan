@@ -61,7 +61,7 @@ const MapContainer = () => {
         .then((res) => res.json())
         .then((json) => {
           if(json.success) {
-            setLocations(json)
+            setLocations(json.artWorks)
           } else {
             alert(json.message)
           }

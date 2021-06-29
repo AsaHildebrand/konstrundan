@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux"
 import styled from "styled-components/macro"
 
 import city from "../reducers/city"
+import artwork from "../reducers/artwork"
 
 const Container = styled.div`
   height: 100vh;
@@ -61,7 +62,8 @@ const Cities = () => {
       {cities.map((singleCity) => (
         <Link to="/map" key={singleCity.city}>
           <Button
-            onClick={() => dispatch(city.actions.setCurrentCity(singleCity))}>
+            onClick={() => {dispatch(city.actions.setCurrentCity(singleCity))
+              dispatch(artwork.actions.setSelectedArtwork(null))}}>
             {singleCity.city}
           </Button>
         </Link>

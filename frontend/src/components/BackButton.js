@@ -31,6 +31,7 @@ const BackButton = () => {
       onClick={() => {
         history.push("/map")
         dispatch(artwork.actions.setArtworkId(null))
+        dispatch(artwork.actions.setSelectedArtwork(null))
       }}>
       Tillbaka
     </Button>

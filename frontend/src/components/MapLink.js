@@ -1,6 +1,9 @@
 import React from "react"
+import { useDispatch } from 'react-redux'
 import { NavLink } from "react-router-dom"
 import styled from "styled-components/macro"
+
+import artwork from "../reducers/artwork"
 
 const Container = styled.div`
   display: flex;
@@ -22,7 +25,7 @@ const Container = styled.div`
   a:active {
     color: white;
   }
-`;
+`
 
 const InnerContainer = styled.div`
   display: flex;
@@ -37,6 +40,7 @@ const Title = styled.p`
 `;
 
 const MapLink = () => {
+  const dispatch = useDispatch()
 
   const iconSrc = (
     <svg
@@ -56,7 +60,11 @@ const MapLink = () => {
 
   return (
     <Container>
-      <NavLink exact to="/map" activeStyle={{ color: "#8D4807" }}>
+      <NavLink exact to="/map"
+      onClick={() => {
+        dispatch(artwork.actions.setSelectedArtwork(null))
+      }} 
+      activeStyle={{ color: "#8D4807" }}>
         <InnerContainer>
           {iconSrc}
           <Title>Karta</Title>
