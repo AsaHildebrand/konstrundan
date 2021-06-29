@@ -123,7 +123,7 @@ const SelectedArtwork = () => {
         .then(data => {
           console.log(data)
           if (data.success === true) {
-
+            alert(data.selectedArtwork.message)
           } else {
             alert(data.selectedArtwork.message)
           }
