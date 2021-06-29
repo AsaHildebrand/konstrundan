@@ -223,39 +223,39 @@ app.get('/resolved-artworks/Uppsala/:id', async (req, res) => {
   }
 })
 
-// app.post('/resolved-artworks/Karlstad', authenticateUser)
-// app.post('/resolved-artworks/Karlstad', async (req, res) => {
-//   const { artworkId, userId } = req.body
-//   try {
-//     const existingArtwork = await resolvedArtWorkKarlstad.findOne({ artwork: artworkId, user: userId })
-//     if (existingArtwork) {
-//       res.status(201).json({ success: true, message: 'Du har redan sparat detta konstverk.', existingArtwork })
-//     } else {
-//       const resolvedArtwork = new resolvedArtWorkKarlstad({ artwork: artworkId, user: userId })
-//       const savedResolvedArtwork = await resolvedArtwork.save()
-//       res.status(201).json({ success: true, savedResolvedArtwork })
-//     }
-//   } catch (error) {
-//     res.status(400).json({ success: false, message: 'Kunde inte spara det funna konstverket till databasen.', error })
-//   }
-// })
+app.post('/resolved-artworks/Karlstad', authenticateUser)
+app.post('/resolved-artworks/Karlstad', async (req, res) => {
+  const { artworkId, userId } = req.body
+  try {
+    const existingArtwork = await resolvedArtWorkKarlstad.findOne({ artwork: artworkId, user: userId })
+    if (existingArtwork) {
+      res.status(201).json({ success: true, message: 'Du har redan sparat detta konstverk.', existingArtwork })
+    } else {
+      const resolvedArtwork = new resolvedArtWorkKarlstad({ artwork: artworkId, user: userId })
+      const savedResolvedArtwork = await resolvedArtwork.save()
+      res.status(201).json({ success: true, savedResolvedArtwork })
+    }
+  } catch (error) {
+    res.status(400).json({ success: false, message: 'Kunde inte spara det funna konstverket till databasen.', error })
+  }
+})
 
-// app.post('/resolved-artworks/Uppsala', authenticateUser)
-// app.post('/resolved-artworks/Uppsala', async (req, res) => {
-//   const { artworkId, userId } = req.body
-//   try {
-//     const existingArtwork = await resolvedArtWorkUppsala.findOne({ artwork: artworkId, user: userId })
-//     if (existingArtwork) {
-//       res.status(201).json({ success: true, message: 'Du har redan sparat detta konstverk.', existingArtwork })
-//     } else {
-//       const resolvedArtwork = new resolvedArtWorkUppsala({ artwork: artworkId, user: userId })
-//       const savedResolvedArtwork = await resolvedArtwork.save()
-//       res.status(201).json({ success: true, savedResolvedArtwork })
-//     }
-//   } catch (error) {
-//     res.status(400).json({ success: false, message: 'Kunde inte spara det funna konstverket till databasen.', error })
-//   }
-// })
+app.post('/resolved-artworks/Uppsala', authenticateUser)
+app.post('/resolved-artworks/Uppsala', async (req, res) => {
+  const { artworkId, userId } = req.body
+  try {
+    const existingArtwork = await resolvedArtWorkUppsala.findOne({ artwork: artworkId, user: userId })
+    if (existingArtwork) {
+      res.status(201).json({ success: true, message: 'Du har redan sparat detta konstverk.', existingArtwork })
+    } else {
+      const resolvedArtwork = new resolvedArtWorkUppsala({ artwork: artworkId, user: userId })
+      const savedResolvedArtwork = await resolvedArtwork.save()
+      res.status(201).json({ success: true, savedResolvedArtwork })
+    }
+  } catch (error) {
+    res.status(400).json({ success: false, message: 'Kunde inte spara det funna konstverket till databasen.', error })
+  }
+})
 
 app.post('/users', async (req, res) => {
   const { username, password } = req.body
