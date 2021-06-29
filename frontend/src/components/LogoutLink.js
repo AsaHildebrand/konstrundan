@@ -47,6 +47,8 @@ const LogoutLink = () => {
       dispatch(user.actions.setUserId(null))
       dispatch(user.actions.setUsername(null))
       dispatch(user.actions.setAccessToken(null))
+      dispatch(user.actions.setResolvedKarlstad(null))
+      dispatch(user.actions.setResolvedUppsala(null))
     })
     localStorage.removeItem("user")
   }

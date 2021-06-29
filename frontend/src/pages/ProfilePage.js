@@ -135,9 +135,10 @@ const ProfilePage = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const sortedKarlstad = resolvedKarlstad.slice().sort((a, b) => (a.artwork.id > b.artwork.id) ? 1 : -1)
-
-  const sortedUppsala = resolvedUppsala.slice().sort((a, b) => (a.artwork.id > b.artwork.id) ? 1 : -1)
+  if (resolvedKarlstad && resolvedUppsala) {
+    const sortedKarlstad = resolvedKarlstad.slice().sort((a, b) => (a.artwork.id > b.artwork.id) ? 1 : -1)
+    const sortedUppsala = resolvedUppsala.slice().sort((a, b) => (a.artwork.id > b.artwork.id) ? 1 : -1)
+  }
 
   return (
     <Container>
@@ -147,7 +148,7 @@ const ProfilePage = () => {
           <ListContainer>
             <h3>Karlstad</h3>
             <List>
-            {sortedKarlstad.map((item) => {
+            { resolvedKarlstad && sortedKarlstad.map((item) => {
               return (
               <Text key={item.artwork.title}>{item.artwork.id}.{" "}{item.artwork.title}</Text>
               )
@@ -157,7 +158,7 @@ const ProfilePage = () => {
           <ListContainer>
             <h3>Uppsala</h3>
             <List>
-            {sortedUppsala.map((item) => {
+            {resolvedUppsala && sortedUppsala.map((item) => {
               return ( 
               <Text key={item.artwork.title}>{item.artwork.id}.{" "}{item.artwork.title}</Text>  
               )
