@@ -95,11 +95,10 @@ const SelectedArtwork = () => {
     fetch(ARTWORK_URL(currentCity, artworkId), options)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data)
         if(data.success) {
           dispatch(artwork.actions.setSelectedArtwork(data.selectedArtwork))
         } else {
-          alert(data.selectedArtwork.message)
+          alert(data.message)
         }
       });}
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -121,11 +120,10 @@ const SelectedArtwork = () => {
       fetch(ANSWER_URL(currentCity), options)
         .then(res => res.json())
         .then(data => {
-          console.log(data)
           if (data.success === true) {
-            alert(data.selectedArtwork.message)
+            alert(data.message)
           } else {
-            alert(data.selectedArtwork.message)
+            alert(data.message)
           }
         })
     } else {

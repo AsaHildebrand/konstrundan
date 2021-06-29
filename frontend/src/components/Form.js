@@ -54,6 +54,10 @@ const StyledLink = styled(Link)`
   text-decoration: none;
   font-size: 16px;
 `
+const ErrorMessage = styled.p`
+  font-size: 24px
+`
+
 
 const Form = ({ username, setUsername, password, setPassword, mode, title, link, linkDescription }) => {
 
@@ -123,7 +127,7 @@ const Form = ({ username, setUsername, password, setPassword, mode, title, link,
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          {errors && <p>{errors.message}</p>}
+          {errors && <ErrorMessage>{errors.message}</ErrorMessage>}
           <Button type="submit" >{title}</Button>
           <StyledLink to={link}>{linkDescription}</StyledLink>
         </InnerContainer>

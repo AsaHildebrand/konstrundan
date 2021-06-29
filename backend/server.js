@@ -250,7 +250,7 @@ app.post('/resolved-artworks/Uppsala', async (req, res) => {
     } else {
       const resolvedArtwork = new resolvedArtWorkUppsala({ artwork: artworkId, user: userId })
       const savedResolvedArtwork = await resolvedArtwork.save()
-      res.status(201).json({ success: true, savedResolvedArtwork })
+      res.status(201).json({ success: true, savedResolvedArtwork, message: 'Konstverket sparat!' })
     }
   } catch (error) {
     res.status(400).json({ success: false, message: 'Kunde inte spara det funna konstverket till databasen.', error })

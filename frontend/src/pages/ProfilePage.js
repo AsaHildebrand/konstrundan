@@ -106,6 +106,7 @@ const ProfilePage = () => {
           if (data.success === true) {
             dispatch(user.actions.setResolvedKarlstad(data.resolvedArtWorksByUser))
           } else {
+            alert(data.message)
           }
         })
     }
@@ -127,6 +128,7 @@ const ProfilePage = () => {
           if (data.success === true) {
             dispatch(user.actions.setResolvedUppsala(data.resolvedArtWorksByUser))
           } else {
+            alert(data.message)
           }
         })
     }
