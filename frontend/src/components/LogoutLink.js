@@ -47,13 +47,13 @@ const LogoutLink = () => {
       dispatch(user.actions.setUserId(null))
       dispatch(user.actions.setUsername(null))
       dispatch(user.actions.setAccessToken(null))
-      dispatch(user.actions.setResolvedKarlstad(null))
-      dispatch(user.actions.setResolvedUppsala(null))
+      dispatch(user.actions.setResolvedKarlstad([]))
+      dispatch(user.actions.setResolvedUppsala([]))
     })
     localStorage.removeItem("user")
   }
 
-  const iconSrc=(
+  const iconSrc = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       width="20"
@@ -77,8 +77,8 @@ const LogoutLink = () => {
     <Container>
       <NavLink exact to="/login" onClick={onLogoutButtonClick} activeStyle={{ color: "#8D4807" }}>
         <InnerContainer>
-        {iconSrc}
-        <Title>Logga ut</Title>
+          {iconSrc}
+          <Title>Logga ut</Title>
         </InnerContainer>
       </NavLink>
     </Container>
