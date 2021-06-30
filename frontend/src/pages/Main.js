@@ -52,6 +52,10 @@ const Main = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  useEffect(() => {
+    console.log(locations)
+  }, [locations])
+
 
   const checkResolved = (locationsArray) => {
     const newLocations = [...locationsArray]
