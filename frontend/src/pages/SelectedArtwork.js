@@ -138,7 +138,6 @@ const SelectedArtwork = () => {
   return (
     selectedArtwork && (
       <Container>
-        <BackButton />
         <InnerContainer>
           <Header>{selectedArtwork.title}</Header>
           <ArtistContainer>
@@ -169,6 +168,7 @@ const SelectedArtwork = () => {
           {!answerIsCorrect && answerIsSubmitted &&
             <p>Fel! Försök igen!</p>}
         </InnerContainer>
+        <BackButton />
       </Container>
     )
   )

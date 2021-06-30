@@ -73,6 +73,14 @@ For the styling we used Styled components. We wanted a classic cultural look. Th
 
 Most of the time we were pair-programming and occasionally we have been working in different branches in Git.
 
+## Cross-Browser Compatibility
+
+We checked that the app is working in:
+* Chrome
+* Edge
+* Safari
+* Firefox
+
 ## Live
 
 Frontend: https://konstrundan.netlify.app/
