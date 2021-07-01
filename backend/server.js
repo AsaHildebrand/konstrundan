@@ -206,7 +206,7 @@ app.get('/resolved-artworks/Karlstad/:id', async (req, res) => {
   const { id } = req.params
   try {
     const resolvedArtWorksByUser = await resolvedArtWorkKarlstad.find({ user: id }).populate({ path: 'artwork', select: ['title', 'id'] }).sort({ 'id': 'desc' })
-    res.status(201).json({ success: true, resolvedArtWorksByUser, onlyArtworks })
+    res.status(201).json({ success: true, resolvedArtWorksByUser })
   } catch (error) {
     res.status(400).json({ success: false, message: 'Kunde inte hitta användare', error })
   }
