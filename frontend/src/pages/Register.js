@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styled from "styled-components/macro"
+import styled from 'styled-components/macro'
 
 import Form from '../components/Form'
 
@@ -25,10 +25,10 @@ const Register = () => {
         setUsername={setUsername}
         password={password}
         setPassword={setPassword}
-        mode="users"
-        title="Registrera"
-        link="/"
-        linkDescription="Har du redan ett användarkonto? Logga in här!"
+        mode='users'
+        title='Registrera'
+        link='/'
+        linkDescription='Har du redan ett användarkonto? Logga in här!'
       />
     </Container>
   )

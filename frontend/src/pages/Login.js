@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import styled from "styled-components/macro"
+import styled from 'styled-components/macro'
 import Form from '../components/Form'
 
 const Container = styled.div`
@@ -24,10 +24,10 @@ const Login = () => {
         setUsername={setUsername}
         password={password}
         setPassword={setPassword}
-        mode="sessions"
-        title="Logga in"
-        link="/register"
-        linkDescription="Har du inget användarkonto än? Skapa ett här!"
+        mode='sessions'
+        title='Logga in'
+        link='/register'
+        linkDescription='Har du inget användarkonto än? Skapa ett här!'
       />
     </Container>
   )

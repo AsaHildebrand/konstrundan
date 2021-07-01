@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { useHistory } from "react-router-dom"
-import styled from "styled-components/macro"
-import { Map, Marker } from "pigeon-maps"
+import React, { useState, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { useHistory } from 'react-router-dom'
+import styled from 'styled-components/macro'
+import { Map } from 'pigeon-maps'
 
-import { MAP_URL } from "../reusable/urls"
+import { MAP_URL } from '../reusable/urls'
 
-import artwork from "../reducers/artwork"
+import artwork from '../reducers/artwork'
 
 const Container = styled.div`
   width: 100vw;
@@ -32,6 +32,20 @@ const InnerContainer = styled.div`
   }
 `
 
+const Button = styled.button`
+  background: none;
+  border: none;
+  font-size: 20px;
+  font-weight: 700;
+  color: #343c63;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 5px;
+`
+
 const MapContainer = () => {
   const [locations, setLocations] = useState([])
   const currentCity = useSelector((store) => store.city.currentCity)
@@ -42,17 +56,17 @@ const MapContainer = () => {
 
   useEffect(() => {
     if (!accessToken) {
-      history.push("/login")
+      history.push('/login')
     }
   })
 
   useEffect(() => {
     if (!currentCity) {
-      history.push("/")
+      history.push('/')
     }
     if (currentCity && accessToken) {
       const options={
-        method: "GET",
+        method: 'GET',
         headers: {
           Authorization: accessToken
         }
@@ -70,9 +84,9 @@ const MapContainer = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const markerColor = "brown"
+  const markerColor = 'brown'
 
-  const DivMarker = ({ left, top, style, children }) => (
+  const CustomMarker = ({ left, top, style, children }) => (
     <div style={{
       position: 'absolute',
       left: left,
@@ -81,10 +95,6 @@ const MapContainer = () => {
     }}>{children}</div>
   )
 
-
-
-
-
   return (
     currentCity && (
       <Container>
@@ -92,29 +102,28 @@ const MapContainer = () => {
           <Map defaultCenter={currentCity.center} defaultZoom={currentCity.zoom}>
             {locations.map((item) => {
               return (
-                <DivMarker
+                <CustomMarker
                   key={item.title}
                   anchor={[item.location.lat, item.location.lng]}
-                  offset={[20, 40]}
+                  offset={[25, 50]}
                   color={markerColor}
-                  
                   style={{
-                    width: 40,
-                    height: 40,
-                    backgroundImage: 'url(./assets/markerwhite.png)',
+                    width: 50,
+                    height: 50,
+                    backgroundImage: 'url(./assets/bluemarker.png)',
                     display: 'flex',
                     flexDirection: 'row',
                     justifyContent: 'center',
-                    alignItems: 'center',
+                    alignItems: 'flex-start',
                   }}>
-                    <button
+                    <Button
                     onClick={() => {
                       dispatch(artwork.actions.setArtworkId(item._id))
-                      history.push("/artwork")
+                      history.push('/artwork')
                     }}
                     >{item.id}
-                    </button>
-                  </DivMarker> 
+                    </Button>
+                  </CustomMarker> 
               )
             })}
           </Map>

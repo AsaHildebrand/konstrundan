@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
-import styled from "styled-components/macro"
+import styled from 'styled-components/macro'
 
 import { RESOLVED_URL } from '../reusable/urls'
 
@@ -16,11 +16,7 @@ const Container = styled.div`
   font-family: 'Lora', serif;
   font-style: italic;
   font-size: 16px;
-
-  @media (min-width: 1024px) {
-    
-  }
-`;
+`
 
 const ResolvedOuterContainer = styled.div`
   background-color: #f1dbb3;
@@ -51,7 +47,7 @@ const ListContainer = styled.div`
   padding: 0;
   margin: 0;
   width: 150px;
-  font-family: "Arial";
+  font-family: 'Arial';
   font-style: normal;
   font-size: 16px;
 
@@ -87,7 +83,7 @@ const ProfilePage = () => {
 
   useEffect(() => {
     if (!accessToken) {
-      history.push("/login")
+      history.push('/login')
     }
   })
 
@@ -99,7 +95,7 @@ const ProfilePage = () => {
           Authorization: accessToken
         }
       }
-      const currentCity1 = "Karlstad"
+      const currentCity1 = 'Karlstad'
       fetch(RESOLVED_URL(currentCity1, userId), options)
         .then((res) => res.json())
         .then((data) => {
@@ -116,12 +112,12 @@ const ProfilePage = () => {
   useEffect(() => {
     if (userId && accessToken) {
       const options = {
-        method: "GET",
+        method: 'GET',
         headers: {
           Authorization: accessToken
         }
       }
-      const currentCity2 = "Uppsala"
+      const currentCity2 = 'Uppsala'
       fetch(RESOLVED_URL(currentCity2, userId), options)
         .then((res) => res.json())
         .then((data) => {
@@ -148,7 +144,7 @@ const ProfilePage = () => {
             <List>
               {sortedKarlstad.map((item) => {
                 return (
-                  <Text key={item.artwork.title}>{item.artwork.id}.{" "}{item.artwork.title}</Text>
+                  <Text key={item.artwork.title}>{item.artwork.id}.{' '}{item.artwork.title}</Text>
                 )
               })}
             </List>

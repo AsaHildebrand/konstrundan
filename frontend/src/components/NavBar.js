@@ -1,11 +1,11 @@
-import React from "react"
-import { useSelector } from "react-redux"
-import styled from "styled-components/macro"
+import React from 'react'
+import { useSelector } from 'react-redux'
+import styled from 'styled-components/macro'
 
-import MapLink from "./MapLink"
-import ChangeCityLink from "./ChangeCityLink"
-import ProfilepageLink from "./ProfilepageLink"
-import LogoutLink from "./LogoutLink"
+import MapLink from './MapLink'
+import ChangeCityLink from './ChangeCityLink'
+import ProfilepageLink from './ProfilepageLink'
+import LogoutLink from './LogoutLink'
 
 const Container = styled.nav`
   width: 100%;

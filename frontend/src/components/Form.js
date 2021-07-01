@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import { useSelector, useDispatch, batch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { Link } from 'react-router-dom'
-import styled from "styled-components/macro"
+import styled from 'styled-components/macro'
 
 import { USER_URL } from '../reusable/urls'
 
@@ -93,7 +93,7 @@ const Form = ({ username, setUsername, password, setPassword, mode, title, link,
             dispatch(user.actions.setAccessToken(data.accessToken))
             dispatch(user.actions.setErrors(null))
           })
-          localStorage.setItem("user", JSON.stringify({
+          localStorage.setItem('user', JSON.stringify({
             username: data.username,
             accessToken: data.accessToken,
             userId: data.userId
@@ -107,28 +107,28 @@ const Form = ({ username, setUsername, password, setPassword, mode, title, link,
 
   return (
     <Container>
-      <form className="registration-form" onSubmit={onFormSubmit}>
+      <form className='registration-form' onSubmit={onFormSubmit}>
         <InnerContainer>
-          <Label htmlFor="username">
+          <Label htmlFor='username'>
             Användarnamn:
           </Label>  
           <Input
-            type="text"
-            id="username"
+            type='text'
+            id='username'
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
-          <Label htmlFor="password">
+          <Label htmlFor='password'>
             Lösenord:
           </Label>
           <Input
-            type="password"
-            id="password"
+            type='password'
+            id='password'
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
           {errors && <ErrorMessage>{errors.message}</ErrorMessage>}
-          <Button type="submit" >{title}</Button>
+          <Button type='submit' >{title}</Button>
           <StyledLink to={link}>{linkDescription}</StyledLink>
         </InnerContainer>
       </form>

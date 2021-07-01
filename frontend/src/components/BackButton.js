@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { useHistory } from "react-router-dom"
-import styled from "styled-components/macro"
+import { useHistory } from 'react-router-dom'
+import styled from 'styled-components/macro'
 
 import artwork from '../reducers/artwork'
 
@@ -29,7 +29,7 @@ const BackButton = () => {
   return (
     <Button
       onClick={() => {
-        history.push("/map")
+        history.push('/map')
         dispatch(artwork.actions.setArtworkId(null))
         dispatch(artwork.actions.setSelectedArtwork(null))
       }}>

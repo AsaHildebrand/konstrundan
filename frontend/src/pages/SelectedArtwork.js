@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react"
-import { useSelector, useDispatch } from "react-redux"
+import React, { useEffect, useState } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
-import styled from "styled-components/macro"
+import styled from 'styled-components/macro'
 
-import BackButton from "../components/BackButton"
-import SubmitButton from "../components/SubmitButton"
-import { ARTWORK_URL, ANSWER_URL } from "../reusable/urls"
+import BackButton from '../components/BackButton'
+import SubmitButton from '../components/SubmitButton'
+import { ARTWORK_URL, ANSWER_URL } from '../reusable/urls'
 
-import artwork from "../reducers/artwork"
+import artwork from '../reducers/artwork'
 
 const Container = styled.div`
   width: 100vw;
@@ -80,14 +80,14 @@ const SelectedArtwork = () => {
 
   useEffect(() => {
     if (!accessToken) {
-      history.push("/login")
+      history.push('/login')
     }
   })
 
   useEffect(() => {
     if (accessToken) {
       const options = {
-        method: "GET",
+        method: 'GET',
         headers: {
           Authorization: accessToken
         }
@@ -151,14 +151,14 @@ const SelectedArtwork = () => {
             onSubmit={onFormSubmit}
           >
             <label>
-              {" "}
+              {' '}
               Bokstav:
-              {" "}
+              {' '}
               <Input
-                type="text"
+                type='text'
                 value={newAnswer}
                 onChange={onNewAnswerChange}
-                maxLength="1"
+                maxLength='1'
               />
             </label>
             <SubmitButton />

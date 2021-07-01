@@ -1,10 +1,10 @@
-import React, { useEffect } from "react"
-import { Link, useHistory } from "react-router-dom"
-import { useDispatch, useSelector } from "react-redux"
-import styled from "styled-components/macro"
+import React, { useEffect } from 'react'
+import { Link, useHistory } from 'react-router-dom'
+import { useDispatch, useSelector } from 'react-redux'
+import styled from 'styled-components/macro'
 
-import city from "../reducers/city"
-import artwork from "../reducers/artwork"
+import city from '../reducers/city'
+import artwork from '../reducers/artwork'
 
 const Container = styled.div`
   height: 100vh;
@@ -39,12 +39,12 @@ const Cities = () => {
 
   const cities = [
     {
-      city: "Karlstad",
+      city: 'Karlstad',
       center: [59.3855, 13.5000],
       zoom: 13
     },
     {
-      city: "Uppsala",
+      city: 'Uppsala',
       center: [59.858562, 17.638928],
       zoom: 11
     },
@@ -52,7 +52,7 @@ const Cities = () => {
 
   useEffect(() => {
     if (!accessToken) {
-      history.push("/login");
+      history.push('/login');
     }
   })
 
@@ -60,7 +60,7 @@ const Cities = () => {
     <Container>
       <p>Välj stad!</p>
       {cities.map((singleCity) => (
-        <Link to="/map" key={singleCity.city}>
+        <Link to='/map' key={singleCity.city}>
           <Button
             onClick={() => {dispatch(city.actions.setCurrentCity(singleCity))
               dispatch(artwork.actions.setSelectedArtwork(null))}}>
