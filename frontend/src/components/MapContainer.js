@@ -72,12 +72,23 @@ const MapContainer = () => {
 
   const markerColor = "brown"
 
+  const DivMarker = ({ left, top, style, children }) => (
+    <div style={{
+      position: 'absolute',
+      left: left,
+      top: top,
+      ...(style || {})
+    }}>{children}</div>
+  )
+
+
+
   return (
     currentCity && (
       <Container>
         <InnerContainer>
           <Map defaultCenter={currentCity.center} defaultZoom={currentCity.zoom}>
-            {locations.map((item) => {
+            {/* {locations.map((item) => {
               return (
                 <Marker
                   key={item.title}
@@ -90,6 +101,55 @@ const MapContainer = () => {
                   }
                   }
                 />
+              )
+            })} */}
+            {locations.map((item) => {
+              return (
+                // <CustomMarker
+                //   key={item.title}
+                //   anchor={[item.location.lat, item.location.lng]}
+                //   offset={[20, 40]}
+                //   color={markerColor}
+                //   onClick={() => {
+                //     dispatch(artwork.actions.setArtworkId(item._id))
+                //     history.push("/artwork")
+                //   }
+                //   }
+                //   style={{
+                //     width: 40,
+                //     height: 40,
+                //     backgroundImage: 'url(./assets/markerwhite.png)',
+                //     display: 'flex',
+                //     flexDirection: 'row',
+                //     justifyContent: 'center',
+                //     alignItems: 'center',
+                //     // transform: 'rotate(45deg)'
+                //     // borderBottomLeftRadius: '100%',
+                //     // borderBottomRightRadius: '100%'
+                    
+                //   }}>
+                //     {item.id}
+                //   </CustomMarker>
+                <DivMarker
+                  key={item.title}
+                  anchor={[item.location.lat, item.location.lng]}
+                  offset={[20, 40]}
+                  color={markerColor}
+                  onClick={() => {
+                    dispatch(artwork.actions.setArtworkId(item._id))
+                    history.push("/artwork")
+                  }}
+                  style={{
+                    width: 40,
+                    height: 40,
+                    backgroundImage: 'url(./assets/markerwhite.png)',
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                  }}>
+                    {item.id}
+                  </DivMarker> 
               )
             })}
           </Map>
