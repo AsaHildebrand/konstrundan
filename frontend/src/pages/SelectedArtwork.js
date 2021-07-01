@@ -52,6 +52,7 @@ const Info = styled.p`
 
 const Header = styled.h2`
   font-weight: 700px;
+  margin:0;
 `
 
 const Input = styled.input`
@@ -64,6 +65,11 @@ const Input = styled.input`
 const Span = styled.span`
   font-weight: 700;
 `
+
+const Form = styled.form`
+height: 30px;
+`
+
 
 const SelectedArtwork = () => {
   const [newAnswer, setNewAnswer] = useState('')
@@ -147,7 +153,7 @@ const SelectedArtwork = () => {
             {selectedArtwork.description}
           </Info>
           <TextClue><Span>Ledtråd:</Span> {selectedArtwork.clue}</TextClue>
-          <form
+          <Form
             onSubmit={onFormSubmit}
           >
             <label>
@@ -162,7 +168,7 @@ const SelectedArtwork = () => {
               />
             </label>
             <SubmitButton />
-          </form>
+          </Form>
           {answerIsCorrect &&
             <p>Rätt svar! Nu kan du ta nästa konstverk.</p>}
           {!answerIsCorrect && answerIsSubmitted &&

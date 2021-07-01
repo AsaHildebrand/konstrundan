@@ -11,7 +11,7 @@ const Button = styled.button`
   display: inline-block;
   font-size: 14px;
   font-weight: 700;
-  margin:0 0 20px 20px;
+  margin:0 0 0 20px;
   align-self: flex-start;
 `
 

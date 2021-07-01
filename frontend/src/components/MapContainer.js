@@ -116,14 +116,14 @@ const MapContainer = () => {
                     justifyContent: 'center',
                     alignItems: 'flex-start',
                   }}>
-                    <Button
-                    onClick={() => {
-                      dispatch(artwork.actions.setArtworkId(item._id))
-                      history.push('/artwork')
-                    }}
-                    >{item.id}
-                    </Button>
-                  </CustomMarker> 
+                  <Button
+                  onClick={() => {
+                    dispatch(artwork.actions.setArtworkId(item._id))
+                    history.push('/artwork')
+                  }}
+                  >{item.id}
+                  </Button>
+                </CustomMarker> 
               )
             })}
           </Map>
