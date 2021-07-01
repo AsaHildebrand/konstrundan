@@ -146,21 +146,21 @@ const ProfilePage = () => {
           <ListContainer>
             <h3>Karlstad</h3>
             <List>
-            {sortedKarlstad.map((item) => {
-              return (
-              <Text key={item.artwork.title}>{item.artwork.id}.{" "}{item.artwork.title}</Text>
-              )
-            })}
+              {sortedKarlstad.map((item) => {
+                return (
+                  <Text key={item.artwork.title}>{item.artwork.id}.{" "}{item.artwork.title}</Text>
+                )
+              })}
             </List>
           </ListContainer>
           <ListContainer>
             <h3>Uppsala</h3>
             <List>
-            {sortedUppsala.map((item) => {
-              return ( 
-              <Text key={item.artwork.title}>{item.artwork.id}.{" "}{item.artwork.title}</Text>  
-              )
-            })}
+              {sortedUppsala.map((item) => {
+                return (
+                  <Text key={item.artwork.title}>{item.artwork.id}.{" "}{item.artwork.title}</Text>
+                )
+              })}
             </List>
           </ListContainer>
         </ResolvedInnerContainer>
