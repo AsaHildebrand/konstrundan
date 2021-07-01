@@ -4,9 +4,10 @@ import { useHistory } from "react-router-dom"
 import styled from "styled-components/macro"
 import { Map, Marker } from "pigeon-maps"
 
-import { MAP_URL } from "../reusable/urls"
+import { MAP_URL, RESOLVED_URL } from "../reusable/urls"
 
 import artwork from "../reducers/artwork"
+import user from "../reducers/user"
 
 const Container = styled.div`
   width: 100vw;
@@ -34,8 +35,12 @@ const InnerContainer = styled.div`
 
 const MapContainer = () => {
   const [locations, setLocations] = useState([])
+  const [resolvedUppsala, setResolvedUppsala] = useState([])
   const currentCity = useSelector((store) => store.city.currentCity)
   const accessToken = useSelector(store => store.user.accessToken)
+  const userId = useSelector((store) => store.user.userId)
+  const ResolvedKarlstad = useSelector(store => store.user.resolvedKarlstad)
+  const ResolvedUppsala = useSelector(store => store.user.resolvedUppsala)
 
   const dispatch = useDispatch()
   const history = useHistory()
@@ -51,7 +56,7 @@ const MapContainer = () => {
       history.push("/")
     }
     if (currentCity && accessToken) {
-      const options={
+      const options = {
         method: "GET",
         headers: {
           Authorization: accessToken
@@ -60,17 +65,71 @@ const MapContainer = () => {
       fetch(MAP_URL(currentCity.city), options)
         .then((res) => res.json())
         .then((data) => {
-          if(data.success) {
+          if (data.success) {
             setLocations(data.artWorks)
           } else {
             alert(data.message)
           }
-      })
+        })
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const markerColor = "brown"
+  useEffect(() => {
+    if (userId && accessToken) {
+      const options = {
+        method: "GET",
+        headers: {
+          Authorization: accessToken
+        }
+      }
+      const currentCity1 = "Karlstad"
+      fetch(RESOLVED_URL(currentCity1, userId), options)
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.success === true) {
+            console.log(data)
+            dispatch(user.actions.setResolvedKarlstad(data.resolvedArtWorksByUser))
+          } else {
+            alert(data.message)
+          }
+        })
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  useEffect(() => {
+    if (userId && accessToken) {
+      const options = {
+        method: "GET",
+        headers: {
+          Authorization: accessToken
+        }
+      }
+      const currentCity2 = "Uppsala"
+      fetch(RESOLVED_URL(currentCity2, userId), options)
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.success === true) {
+            console.log(data.resolvedArtWorksByUser)
+            setResolvedUppsala(data.resolvedArtWorksByUser.artwork)
+          } else {
+            alert(data.message)
+          }
+        })
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+
+  let markerColor = "brown"
+
+  // determineMarkerColor = () => {
+  //   if (ResolvedKarlstad.includes(item._id) || ResolvedUppsala.includes(item._id)) {
+  //     return "green"
+  //   } else {
+  //     return "brown"
+  //   }
+  // }
 
   return (
     currentCity && (
@@ -78,6 +137,12 @@ const MapContainer = () => {
         <InnerContainer>
           <Map defaultCenter={currentCity.center} defaultZoom={currentCity.zoom}>
             {locations.map((item) => {
+              console.log(ResolvedUppsala)
+              if (ResolvedKarlstad.artwork.includes(item._id) || ResolvedUppsala.includes(item._id)) {
+                markerColor = "green"
+              } else {
+                markerColor = "brown"
+              }
               return (
                 <Marker
                   key={item.title}
