@@ -189,24 +189,25 @@ app.get('/artworks/Uppsala/:id', authenticateUser)
 app.get('/artworks/Uppsala/:id', async (req, res) => {
   const { id } = req.params
 
-try {
-  const selectedArtwork = await ArtWorkUppsala.findById(id)
-  if (selectedArtwork) {
-    res.json({ success: true, selectedArtwork })
-  } else {
-    res.status(404).json({ success: false, message: 'Konstverket du söker finns inte i databasen' })
+  try {
+    const selectedArtwork = await ArtWorkUppsala.findById(id)
+    if (selectedArtwork) {
+      res.json({ success: true, selectedArtwork })
+    } else {
+      res.status(404).json({ success: false, message: 'Konstverket du söker finns inte i databasen' })
+    }
+  } catch (error) {
+    res.status(400).json({ success: false, message: 'Något gick fel', error })
   }
-} catch (error) {
-  res.status(400).json({ success: false, message: 'Något gick fel', error })
-}
 })
 
 app.get('/resolved-artworks/Karlstad/:id', authenticateUser)
 app.get('/resolved-artworks/Karlstad/:id', async (req, res) => {
   const { id } = req.params
   try {
-    const resolvedArtWorksByUser = await resolvedArtWorkKarlstad.find({ user: id }).populate({ path: 'artwork', select: ['title', 'id'] }).sort({'id': 'desc'})
-    res.status(201).json({ success: true, resolvedArtWorksByUser })
+    const resolvedArtWorksByUser = await resolvedArtWorkKarlstad.find({ user: id }).populate({ path: 'artwork', select: ['title', 'id'] }).sort({ 'id': 'desc' })
+    const onlyArtworks = await resolvedArtWorkKarlstad.find({ user: id })
+    res.status(201).json({ success: true, resolvedArtWorksByUser, onlyArtworks })
   } catch (error) {
     res.status(400).json({ success: false, message: 'Kunde inte hitta användare', error })
   }
