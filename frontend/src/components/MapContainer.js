@@ -35,12 +35,10 @@ const InnerContainer = styled.div`
 
 const MapContainer = () => {
   const [locations, setLocations] = useState([])
-  const [resolvedUppsala, setResolvedUppsala] = useState([])
+  const [resolvedKarlstad, setResolvedKarlstad] = useState([])
   const currentCity = useSelector((store) => store.city.currentCity)
   const accessToken = useSelector(store => store.user.accessToken)
   const userId = useSelector((store) => store.user.userId)
-  const ResolvedKarlstad = useSelector(store => store.user.resolvedKarlstad)
-  const ResolvedUppsala = useSelector(store => store.user.resolvedUppsala)
 
   const dispatch = useDispatch()
   const history = useHistory()
@@ -89,7 +87,7 @@ const MapContainer = () => {
         .then((data) => {
           if (data.success === true) {
             console.log(data)
-            dispatch(user.actions.setResolvedKarlstad(data.resolvedArtWorksByUser))
+            setResolvedKarlstad(data.onlyArtworks)
           } else {
             alert(data.message)
           }
@@ -98,30 +96,35 @@ const MapContainer = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  useEffect(() => {
-    if (userId && accessToken) {
-      const options = {
-        method: "GET",
-        headers: {
-          Authorization: accessToken
-        }
-      }
-      const currentCity2 = "Uppsala"
-      fetch(RESOLVED_URL(currentCity2, userId), options)
-        .then((res) => res.json())
-        .then((data) => {
-          if (data.success === true) {
-            console.log(data.resolvedArtWorksByUser)
-            setResolvedUppsala(data.resolvedArtWorksByUser.artwork)
-          } else {
-            alert(data.message)
-          }
-        })
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+  // useEffect(() => {
+  //   if (userId && accessToken) {
+  //     const options = {
+  //       method: "GET",
+  //       headers: {
+  //         Authorization: accessToken
+  //       }
+  //     }
+  //     const currentCity2 = "Uppsala"
+  //     fetch(RESOLVED_URL(currentCity2, userId), options)
+  //       .then((res) => res.json())
+  //       .then((data) => {
+  //         if (data.success === true) {
+  //           setResolvedUppsala(data.resolvedArtWorksByUser.artwork)
+  //         } else {
+  //           alert(data.message)
+  //         }
+  //       })
+  //   }
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [])
+
+
 
   let markerColor = "brown"
+
+  const resolvedList = resolvedKarlstad.map((i) => {
+    i.artwork
+  })
 
   // determineMarkerColor = () => {
   //   if (ResolvedKarlstad.includes(item._id) || ResolvedUppsala.includes(item._id)) {
@@ -137,8 +140,11 @@ const MapContainer = () => {
         <InnerContainer>
           <Map defaultCenter={currentCity.center} defaultZoom={currentCity.zoom}>
             {locations.map((item) => {
-              console.log(ResolvedUppsala)
-              if (ResolvedKarlstad.artwork.includes(item._id) || ResolvedUppsala.includes(item._id)) {
+              console.log(resolvedKarlstad)
+              // if (resolvedKarlstad.includes(item._id) || resolvedUppsala.includes(item._id)) {
+
+              console.log(resolvedList)
+              if (resolvedList.includes(item_id)) {
                 markerColor = "green"
               } else {
                 markerColor = "brown"
