@@ -150,7 +150,7 @@ const ProfilePage = () => {
         <ResolvedInnerContainer>
           <ListContainer>
             <h3>Karlstad</h3>
-            {sortedKarlstad.length === 20 && <Message>🏆 Alla funna i Karlstad!</Message>}
+            {sortedKarlstad.length === 20 && <Message><span role='img' aria-label="trofé">🏆</span> Alla funna i Karlstad!</Message>}
             <List>
               {sortedKarlstad.map((item) => {
                 return (
@@ -161,11 +161,11 @@ const ProfilePage = () => {
           </ListContainer>
           <ListContainer>
             <h3>Uppsala</h3>
-            {sortedUppsala.length === 14 && <Message>🏆 Alla funna i Uppsala!</Message>}
+            {sortedUppsala.length === 14 && <Message><span role='img' aria-label="trofé">🏆</span> Alla funna i Uppsala!</Message>}
             <List>
               {sortedUppsala.map((item) => {
                 return (
-                  <Text key={item.artwork.title}>{item.artwork.id}.{" "}{item.artwork.title}</Text>
+                  <Text key={item.artwork.title}>{item.artwork.id}.{' '}{item.artwork.title}</Text>
                 )
               })}
             </List>
