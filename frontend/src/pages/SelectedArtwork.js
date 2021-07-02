@@ -98,15 +98,16 @@ const SelectedArtwork = () => {
           Authorization: accessToken
         }
       }
-    fetch(ARTWORK_URL(currentCity, artworkId), options)
-      .then((res) => res.json())
-      .then((data) => {
-        if(data.success) {
-          dispatch(artwork.actions.setSelectedArtwork(data.selectedArtwork))
-        } else {
-          alert(data.message)
-        }
-      });}
+      fetch(ARTWORK_URL(currentCity, artworkId), options)
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.success) {
+            dispatch(artwork.actions.setSelectedArtwork(data.selectedArtwork))
+          } else {
+            alert(data.message)
+          }
+        });
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -145,7 +146,7 @@ const SelectedArtwork = () => {
     selectedArtwork && (
       <Container>
         <InnerContainer>
-          <Header>{selectedArtwork.title}</Header>
+          <Header><span>{selectedArtwork.id}. </span>{selectedArtwork.title}</Header>
           <ArtistContainer>
             <Text>Av {selectedArtwork.artist}, {selectedArtwork.year}</Text>
           </ArtistContainer>
