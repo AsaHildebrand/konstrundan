@@ -65,7 +65,7 @@ const MapContainer = () => {
       history.push('/')
     }
     if (currentCity && accessToken) {
-      const options={
+      const options = {
         method: 'GET',
         headers: {
           Authorization: accessToken
@@ -74,12 +74,12 @@ const MapContainer = () => {
       fetch(MAP_URL(currentCity.city), options)
         .then((res) => res.json())
         .then((data) => {
-          if(data.success) {
+          if (data.success) {
             setLocations(data.artWorks)
           } else {
             alert(data.message)
           }
-      })
+        })
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
@@ -117,13 +117,13 @@ const MapContainer = () => {
                     alignItems: 'flex-start',
                   }}>
                   <Button
-                  onClick={() => {
-                    dispatch(artwork.actions.setArtworkId(item._id))
-                    history.push('/artwork')
-                  }}
+                    onClick={() => {
+                      dispatch(artwork.actions.setArtworkId(item._id))
+                      history.push('/artwork')
+                    }}
                   >{item.id}
                   </Button>
-                </CustomMarker> 
+                </CustomMarker>
               )
             })}
           </Map>

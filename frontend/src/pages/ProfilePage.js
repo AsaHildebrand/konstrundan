@@ -71,6 +71,15 @@ const Text = styled.li`
   margin: 5px 0;
   list-style-type: none;
 `
+const Message = styled.p`
+  background-color: #BDDAB1;
+  padding: 3px;
+  width: 90%;
+  border: 1px solid black;
+  font-weight: 700px;
+  font-size: 16px;
+`
+
 
 const ProfilePage = () => {
   const username = useSelector((store) => store.user.username)
@@ -141,6 +150,7 @@ const ProfilePage = () => {
         <ResolvedInnerContainer>
           <ListContainer>
             <h3>Karlstad</h3>
+            {sortedKarlstad.length === 20 && <Message>🏆 Alla funna i Karlstad!</Message>}
             <List>
               {sortedKarlstad.map((item) => {
                 return (
@@ -151,6 +161,7 @@ const ProfilePage = () => {
           </ListContainer>
           <ListContainer>
             <h3>Uppsala</h3>
+            {sortedUppsala.length === 14 && <Message>🏆 Alla funna i Uppsala!</Message>}
             <List>
               {sortedUppsala.map((item) => {
                 return (
